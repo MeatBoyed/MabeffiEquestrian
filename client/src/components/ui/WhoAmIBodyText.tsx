@@ -1,9 +1,9 @@
-import Typography from "@/ui/Typography"
+import Typography from "@/components/ui/Typography"
 import {
   Collapsible,
   CollapsibleTrigger,
   CollapsibleContent,
-} from "@/ui/collapsible"
+} from "@/components/ui/collapsible"
 import { useState } from "react"
 
 export default function WhoAmIBodyText() {
