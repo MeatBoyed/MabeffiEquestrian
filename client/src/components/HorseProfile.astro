@@ -1,0 +1,61 @@
+---
+import Typography from "@/components/ui/Typography"
+import { Button } from "@/components/ui/button"
+import HorseProfileImg from "@/assets/HorseProfile.jpg"
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro"
+import { Badge } from "@/components/ui/badge"
+import { Cake, Medal } from "lucide-react"
+import HorseProfileText from "./ui/HorseProfileText"
+---
+
+<section id="HorseProfile" class="grid grid-cols-1 gap-10">
+  <!-- Left Carousel -->
+  <ResponsiveImage
+    alt="Site intro"
+    src={HorseProfileImg}
+    sizes={[400, 700, 900]}
+    format="avif"
+  />
+
+  <!-- Right Content -->
+  <div class="flex w-full flex-col items-start justify-center gap-6">
+    <Typography variant={"h1"} className="">Meet Donny</Typography>
+
+    <!-- Badges -->
+    <div class="flex w-full items-center justify-start gap-3">
+      <Badge
+        variant={"secondary"}
+        className="flex items-center justify-center gap-2"
+      >
+        <Typography variant={"p"} affects={"large"}>Ridge-Back</Typography>
+      </Badge>
+      <Badge
+        variant={"secondary"}
+        className="flex items-center justify-center gap-2"
+      >
+        <Typography variant={"p"} affects={"large"}>7</Typography>
+        <Cake />
+      </Badge>
+      <Badge
+        variant={"secondary"}
+        className="flex items-center justify-center gap-2"
+      >
+        <Typography variant={"p"} affects={"large"}>2</Typography>
+        <Medal />
+      </Badge>
+    </div>
+
+    <div class="flex flex-col items-start justify-center gap-2">
+      <Typography variant={"p"} className="">
+        I am passionate about horses and have dedicated my life to sharing the
+        joy of horse riding with others. Having spent years in the equestrian
+        world, I have gained valuable experience and knowledge that I am eager
+        to pass on to my students. I have successfully competed in shows and
+        have honed my riding skills to a high level.
+      </Typography>
+      <HorseProfileText client:load />
+    </div>
+
+    <Button>Book a Lesson with Me</Button>
+  </div>
+</section>
