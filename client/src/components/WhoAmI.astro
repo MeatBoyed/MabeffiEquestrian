@@ -10,7 +10,7 @@ import WhoAmIBodyText from "../ui/WhoAmIBodyText"
   <!-- Left Content -->
   <div class="flex w-full flex-col items-start justify-center gap-6">
     <Typography variant={"h1"} className="">Who am I</Typography>
-    <div class="flex flex-col items-start justify-center gap-1">
+    <div class="flex flex-col items-start justify-center gap-2">
       <Typography variant={"p"} className="">
         I am passionate about horses and have dedicated my life to sharing the
         joy of horse riding with others. Having spent years in the equestrian
@@ -21,7 +21,10 @@ import WhoAmIBodyText from "../ui/WhoAmIBodyText"
       <WhoAmIBodyText client:load />
     </div>
 
-    <Button>Book Now</Button>
+    <div class="flex justify-center items-center gap-3">
+    <Button>Meet Donny</Button>
+    <Button variant={"outline"}>Contact Me</Button>
+    </div>
   </div>
 
   <ResponsiveImage
