@@ -1,0 +1,33 @@
+---
+import Typography from "@/ui/Typography"
+import { Button } from "@/ui/button"
+import WhoamiImage from "@/assets/WhoAmI.jpg"
+import ResponsiveImage from "@/ui/ResponsiveImage.astro"
+import WhoAmIBodyText from "../ui/WhoAmIBodyText"
+---
+
+<section class="grid grid-cols-1 gap-10">
+  <!-- Left Content -->
+  <div class="flex w-full flex-col items-start justify-center gap-6">
+    <Typography variant={"h1"} className="">Who am I</Typography>
+    <div class="flex flex-col items-start justify-center gap-1">
+      <Typography variant={"p"} className="">
+        I am passionate about horses and have dedicated my life to sharing the
+        joy of horse riding with others. Having spent years in the equestrian
+        world, I have gained valuable experience and knowledge that I am eager
+        to pass on to my students. I have successfully competed in shows and
+        have honed my riding skills to a high level.
+      </Typography>
+      <WhoAmIBodyText client:load />
+    </div>
+
+    <Button>Book Now</Button>
+  </div>
+
+  <ResponsiveImage
+    alt="Site intro"
+    src={WhoamiImage}
+    sizes={[400, 700, 900]}
+    format="avif"
+  />
+</section>

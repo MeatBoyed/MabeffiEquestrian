@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets"
 import Typography from "@/ui/Typography"
 import { Button } from "@/ui/button"
 import IntroImg from "@/assets/IntroImg.jpg"
@@ -7,13 +6,17 @@ import ShowJumping from "@/assets/ShowJumping.jpg"
 import ResponsiveImage from "@/ui/ResponsiveImage.astro"
 ---
 
-  <!-- FIX ALT -->
 <section class="grid grid-cols-1 gap-6">
-  <ResponsiveImage alt="Site intro" src={IntroImg} sizes={[400, 700, 900]} format="avif" />
+  <ResponsiveImage
+    alt="Site intro"
+    src={IntroImg}
+    sizes={[400, 700, 900]}
+    format="avif"
+  />
 
   <!-- Right Content -->
   <div class="flex w-full flex-col items-start justify-center gap-10">
-    <div class="flex flex-col items-start justify-center gap-3">
+    <div class="flex flex-col items-start justify-center gap-6">
       <Typography variant={"h1"} className="">
         Unleash Your Riding Potential
       </Typography>
@@ -27,6 +30,11 @@ import ResponsiveImage from "@/ui/ResponsiveImage.astro"
       <Button>Book Now</Button>
     </div>
 
-  <ResponsiveImage alt="Show Jumping" src={ShowJumping} sizes={[200, 700, 900]} format="avif" />
+    <ResponsiveImage
+      alt="Show Jumping"
+      src={ShowJumping}
+      sizes={[200, 700, 900]}
+      format="avif"
+    />
   </div>
 </section>
