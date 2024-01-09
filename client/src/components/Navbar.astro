@@ -1,11 +1,12 @@
 ---
 import Typography from "@/components/ui/Typography"
-import { Menu } from "lucide-react"
+import DropDown from "@/components/ui/DropDown"
 ---
 
 <nav
+  id="Navbar"
   class="flex w-full items-center justify-between border-b border-slate-300 p-5"
 >
   <Typography variant="h3" className="">Mabeffi Equestrian</Typography>
-  <Menu />
+  <DropDown client:load />
 </nav>
