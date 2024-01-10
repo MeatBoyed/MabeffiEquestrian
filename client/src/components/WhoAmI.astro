@@ -3,7 +3,7 @@ import Typography from "@/components/ui/Typography"
 import { Button } from "@/components/ui/button"
 import WhoamiImage from "@/assets/WhoAmI.jpg"
 import ResponsiveImage from "@/components/ui/ResponsiveImage.astro"
-import WhoAmIBodyText from "../components/ui/WhoAmIBodyText"
+import ReadMoreText from "./ui/ReadMoreText"
 ---
 
 <section id="AboutMe" class="grid grid-cols-1 gap-10">
@@ -18,7 +18,13 @@ import WhoAmIBodyText from "../components/ui/WhoAmIBodyText"
         to pass on to my students. I have successfully competed in shows and
         have honed my riding skills to a high level.
       </Typography>
-      <WhoAmIBodyText client:load />
+      <!-- <WhoAmIBodyText client:load /> -->
+      <ReadMoreText
+        part1="Having spent years in the equestrian world, I have gained valuable experience and knowledge that I am eager to pass on to my students. I have successfully competed in shows and have honed my riding skills to a high level."
+        part2="With a focus on personalized instruction, I strive to create a positive and supportive environment for my students. Whether your child is a beginner or an experienced rider, I will tailor each lesson to their individual needs and goals."
+        part3="My teaching philosophy emphasizes safety, technique, and the development of a strong bond between rider and horse. I believe that horse riding is not just a sport but a way to develop important life skills such as discipline, confidence, and empathy."
+        client:load
+      />
     </div>
 
     <div class="flex items-center justify-center gap-3">

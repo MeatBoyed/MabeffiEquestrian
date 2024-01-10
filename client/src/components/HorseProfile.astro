@@ -5,7 +5,7 @@ import HorseProfileImg from "@/assets/HorseProfile.jpg"
 import ResponsiveImage from "@/components/ui/ResponsiveImage.astro"
 import { Badge } from "@/components/ui/badge"
 import { Cake, Medal } from "lucide-react"
-import HorseProfileText from "./ui/HorseProfileText"
+import ReadMoreText from "./ui/ReadMoreText"
 ---
 
 <section id="HorseProfile" class="grid grid-cols-1 gap-10">
@@ -27,33 +27,35 @@ import HorseProfileText from "./ui/HorseProfileText"
         variant={"secondary"}
         className="flex items-center justify-center gap-2"
       >
-        <Typography variant={"p"} affects={"large"}>Ridge-Back</Typography>
+        <Typography variant={"p"} affects={"small"}>Ridge-Back</Typography>
       </Badge>
       <Badge
         variant={"secondary"}
         className="flex items-center justify-center gap-2"
       >
-        <Typography variant={"p"} affects={"large"}>7</Typography>
+        <Typography variant={"p"} affects={"small"}>7</Typography>
         <Cake />
       </Badge>
       <Badge
         variant={"secondary"}
         className="flex items-center justify-center gap-2"
       >
-        <Typography variant={"p"} affects={"large"}>2</Typography>
+        <Typography variant={"p"} affects={"small"}>2</Typography>
         <Medal />
       </Badge>
     </div>
 
     <div class="flex flex-col items-start justify-center gap-2">
       <Typography variant={"p"} className="">
-        I am passionate about horses and have dedicated my life to sharing the
-        joy of horse riding with others. Having spent years in the equestrian
-        world, I have gained valuable experience and knowledge that I am eager
-        to pass on to my students. I have successfully competed in shows and
-        have honed my riding skills to a high level.
+        As a ridgeback breed, Don Natello possesses the strength, agility, and
+        striking appearance that make him stand out. His captivating presence
+        and sleek physique make him a true sight to behold.
       </Typography>
-      <HorseProfileText client:load />
+      <ReadMoreText
+        part1="But it's not just about his achievements and physical attributes. Don Natello has a charming personality and thrives on attention. He loves forming connections with riders and cherishes the time spent together."
+        part2="Riding with Don Natello is an experience like no other. His presence will elevate your riding skills and create unforgettable moments that you will cherish for a lifetime."
+        client:load
+      />
     </div>
 
     <Button>Book a Lesson with Me</Button>

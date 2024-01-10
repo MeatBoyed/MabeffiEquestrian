@@ -1,0 +1,42 @@
+---
+import Typography from "@/components/ui/Typography"
+import EventsImg from "@/assets/Events.jpg"
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro"
+import Event, { type EventType } from "./ui/Event.astro"
+
+const EventData: EventType = {
+  title: "Pony Camp 003",
+  date: "21/3/24",
+  location: "Walvis Bay, Namibia",
+  maxMemebers: 20,
+  enrollLink: "",
+  bodyText: {
+    first:
+      "A thrilling 5-day adventure designed to introduce kids aged 2-16 to the essentials of equestrianism.",
+    second:
+      "Under the guidance of our experienced instructors, campers will learn the basics of horse care, develop riding skills, and gain a deeper understanding of equestrian sports.",
+    part1:
+      "Limited to only 15 participants, this camp offers a unique opportunity for young riders to immerse themselves in a fun-filled, educational experience.",
+    part2:
+      "Don't miss out on this incredible opportunity! Register now to secure your child's spot in our Pony Camp",
+  },
+}
+---
+
+<section
+  id="HorseProfile"
+  class="flex flex-col items-center justify-center gap-10"
+>
+  <Typography variant={"h1"} className="">Riding Events</Typography>
+  <!-- Left Carousel -->
+  <ResponsiveImage
+    alt="Site intro"
+    src={EventsImg}
+    sizes={[400, 700, 900]}
+    format="avif"
+  />
+
+  <!-- Right Content -->
+  <Event Event={EventData} />
+
+</section>

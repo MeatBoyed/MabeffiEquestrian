@@ -6,19 +6,34 @@ import {
 } from "@/components/ui/collapsible"
 import { useState } from "react"
 
-export default function HorseProfileText() {
+export default function WhoAmIBodyText({
+  part1,
+  part2,
+  part3,
+  together,
+}: {
+  part1: string
+  part2: string
+  part3?: string
+  together?: boolean
+}) {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <Collapsible onOpenChange={(open) => setIsOpen(open)}>
-      <CollapsibleContent className="flex flex-col items-center justify-center gap-1">
+      <CollapsibleContent className="">
         <Typography variant={"p"}>
-          But it's not just about his achievements and physical attributes. Don
-          Natello has a charming personality and thrives on attention. He loves
-          forming connections with riders and cherishes the time spent together.
           <br />
-          Riding with Don Natello is an experience like no other. His presence
-          will elevate your riding skills and create unforgettable moments that
-          you will cherish for a lifetime.
+          {part1}
+          <br />
+          {!together && <br />}
+          {part2}
+          {part3 && (
+            <>
+              <br />
+              {!together && <br />}
+              {part3}
+            </>
+          )}
         </Typography>
       </CollapsibleContent>
       <CollapsibleTrigger style={{ marginTop: !isOpen ? "" : "0.75rem" }}>
