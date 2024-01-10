@@ -1,0 +1,76 @@
+---
+import { getImage } from "astro:assets"
+import ServiceCard from "./ui/ServiceCard.astro"
+import Typography from "./ui/Typography"
+import { FaWhatsapp } from "react-icons/fa"
+import RidingImg from "@/assets/ServiceCard1.jpg"
+import PonyRideImg from "@/assets/ServiceCard2.jpg"
+import { Button } from "./ui/button"
+
+const RidingImage = await getImage({ src: RidingImg, format: "avif" })
+const PonyRideImage = await getImage({ src: PonyRideImg, format: "avif" })
+
+const servicesOffer = [
+  {
+    title: "Pony Rides",
+    image: PonyRideImage.src,
+    description: "Enhance your riding skills",
+    intails: [
+      "Horse Riding",
+      "Preparing horse for paddock",
+      "Brushing & tackling horse for riding",
+    ],
+    bookWhat: "Ride",
+  },
+  {
+    title: "Riding Lessons",
+    image: RidingImage.src,
+    description: "Enhance your riding skills",
+    intails: [
+      "Horse Riding",
+      "Preparing horse for paddock",
+      "Brushing & tackling horse for riding",
+    ],
+    bookWhat: "Lesson",
+  },
+  {
+    title: "Photo Shoot",
+    image: PonyRideImage.src,
+    description: "Enhance your riding skills",
+    intails: [
+      "Horse Riding",
+      "Preparing horse for paddock",
+      "Brushing & tackling horse for riding",
+    ],
+    bookWhat: "Session",
+  },
+]
+---
+
+<section id="Reviews" class="flex flex-col items-center justify-center gap-10">
+  <!-- Heading -->
+  <div class="flex flex-col items-center justify-center">
+    <Typography variant={"h1"} className="">My Services</Typography>
+    <Typography variant={"p"} className="text-center">
+      By enrolling your child in my horse riding lessons, you are giving them
+      the opportunity to not only learn a lifelong skill but also develop
+      essential life qualities such as discipline, patience, and perseverance.
+    </Typography>
+  </div>
+
+  <!-- Services -->
+  <div class="w-full">
+    {servicesOffer.map((service) => <ServiceCard service={service} />)}
+  </div>
+
+  <div class="flex flex-col items-center justify-center text-center">
+    <Button className="gap-3">
+      <FaWhatsapp className="h-5 w-5 " />
+      <p>Get In Touch</p>
+    </Button>
+    <Typography variant={"p"}>
+      Unlock your child's riding potential and create unforgettable memories
+      together. Get started today by clicking the button below!
+    </Typography>
+  </div>
+</section>

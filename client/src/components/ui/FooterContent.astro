@@ -1,0 +1,29 @@
+---
+import Typography from "./Typography"
+import { FaWhatsapp } from "react-icons/fa"
+import { FaInstagram } from "react-icons/fa6"
+import { FaFacebook } from "react-icons/fa6"
+---
+
+<div class="flex w-full flex-col items-center justify-center gap-10">
+  <div class="flex w-full items-start justify-between">
+    <Typography variant={"h3"} className="text-start">
+      Mabeffi Equestrian
+    </Typography>
+
+    <!-- Links -->
+    <div class="flex flex-col items-start justify-center">
+      <Typography variant={"p"}>About Me</Typography>
+      <Typography variant={"p"}>Services</Typography>
+      <Typography variant={"p"}>Horse asd</Typography>
+      <Typography variant={"p"}>Events</Typography>
+    </div>
+  </div>
+
+  <!-- Social Media -->
+  <div class="flex w-[50%] items-center justify-between">
+    <FaWhatsapp className="h-10 w-10" />
+    <FaFacebook className="h-10 w-10" />
+    <FaInstagram className="h-10 w-10" />
+  </div>
+</div>

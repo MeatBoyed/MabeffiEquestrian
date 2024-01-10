@@ -1,4 +1,5 @@
 {
+  "filepath": "./src/***",
   "semi": false,
   "singleQuote": false,
   "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
