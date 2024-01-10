@@ -1,15 +1,12 @@
 ---
 import Typography from "./Typography"
+
+const { name, body } = Astro.props
 ---
 
 <div class="flex w-full flex-col items-start justify-start gap-1">
-  <Typography variant={"h3"}>Sarah J. Smith</Typography>
+  <Typography variant={"h3"}>{name}</Typography>
   <Typography variant={"p"}>
-    My child has been attending Maribeth Connor's Horse Riding Lessons for
-    several months now, and I couldn't be happier with the experience.
-    Maribeth's expertise and passion for horses truly shines through in her
-    teaching. Not only has my child developed solid riding skills, but they have
-    also gained confidence, discipline, and a deep love for these magnificent
-    animals.
+  {body}
   </Typography>
 </div>
