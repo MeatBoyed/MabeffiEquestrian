@@ -3,9 +3,13 @@ import Typography from "@/components/ui/Typography"
 import EventsImg from "@/assets/Events.jpg"
 import ResponsiveImage from "@/components/ui/ResponsiveImage.astro"
 import Event, { type EventType } from "./ui/Event.astro"
+import { getImage } from "astro:assets"
+
+// const EventsImage = await getImage({ src: EventsImg, format: "avif"})
 
 const EventData: EventType = {
   title: "Pony Camp 003",
+  image: EventsImg,
   date: "21/3/24",
   location: "Walvis Bay, Namibia",
   maxMemebers: 20,
@@ -24,14 +28,7 @@ const EventData: EventType = {
 ---
 
 <section id="Events" class="flex flex-col items-center justify-center gap-10">
-  <Typography variant={"h1"} className="">Riding Events</Typography>
-  <!-- Left Carousel -->
-  <ResponsiveImage
-    alt="Site intro"
-    src={EventsImg}
-    sizes={[400, 700, 900]}
-    format="avif"
-  />
+  <Typography variant={"h1"} className="text-center">Riding Events</Typography>
 
   <!-- Right Content -->
   <Event Event={EventData} />

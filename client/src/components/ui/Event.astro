@@ -5,6 +5,7 @@ import ReadMoreText from "./ReadMoreText"
 import { Button } from "./button"
 import { Badge } from "./badge"
 import z, { string, number } from "zod"
+import ResponsiveImage from "./ResponsiveImage.astro"
 
 const EventSchema = z.object({
   title: string().min(5, { message: "Enter valid Title" }),
@@ -19,6 +20,7 @@ const EventSchema = z.object({
     part2: z.string().min(50, { message: "Just a bit more" }),
     part3: z.string().min(50, { message: "Just a bit more" }).optional(),
   }),
+  image: z.any()
 })
 
 export type EventType = z.infer<typeof EventSchema>
@@ -28,15 +30,23 @@ interface Props {
 }
 
 const {
-  Event: { title, location, enrollLink, maxMemebers, date, bodyText },
+  Event: { title, location, enrollLink, maxMemebers, date, bodyText, image },
 } = Astro.props
 ---
+  <div class="grid grid-cols-1 gap-5 w-full lg:grid-cols-2 md:items-start md:gap-10 lg:gap-20">
 
-<div class="flex w-full flex-col items-start justify-center gap-6">
+  <ResponsiveImage
+    alt="Site intro"
+    src={image}
+    sizes={[400, 700, 900]}
+    format="avif"
+  />
+
+<div class="flex w-full flex-col items-start justify-center  gap-6 ">
   <Typography variant={"h1"} className="">{title}</Typography>
 
   <!-- Badges -->
-  <div class="flex w-full items-center justify-start gap-3">
+  <div class="flex w-full items-center justify-start gap-3 flex-wrap">
     <Badge
       variant={"secondary"}
       className="flex items-center justify-center gap-2"
@@ -45,15 +55,6 @@ const {
       <CalendarDays size={20} />
     </Badge>
 
-    <Badge
-      variant={"secondary"}
-      className="flex items-center justify-center gap-2"
-    >
-      <Typography variant={"p"} affects={"small"}>
-        {location}
-      </Typography>
-      <MapPin size={20} />
-    </Badge>
     {
       maxMemebers && (
         <Badge
@@ -67,6 +68,15 @@ const {
         </Badge>
       )
     }
+    <Badge
+      variant={"secondary"}
+      className="flex items-center justify-center gap-2"
+    >
+      <Typography variant={"p"} affects={"small"}>
+        {location}
+      </Typography>
+      <MapPin size={20} />
+    </Badge>
   </div>
 
   <div class="flex flex-col items-start justify-center gap-2">
@@ -92,3 +102,5 @@ const {
     <Button variant={"outline"}>Learn More</Button>
   </div>
 </div>
+
+  </div>
