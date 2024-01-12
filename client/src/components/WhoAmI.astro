@@ -1,9 +1,18 @@
 ---
 import Typography from "@/components/ui/Typography"
 import { Button } from "@/components/ui/button"
-import WhoamiImage from "@/assets/WhoAmI.jpg"
 import ResponsiveImage from "@/components/ui/ResponsiveImage.astro"
 import ReadMoreText from "./ui/ReadMoreText"
+import SlideShow from "./ui/SlideShow"
+import { getImage } from "astro:assets"
+
+import WhoamiImage from "@/assets/WhoAmI.jpg"
+import WhoamiImage2 from "@/assets/WhoAmI2.jpg"
+import WhoamiImage3 from "@/assets/WhoAmI3.jpg"
+
+const image1 = await getImage({ src: WhoamiImage, format: "avif" })
+const image2 = await getImage({ src: WhoamiImage2, format: "avif" })
+const image3 = await getImage({ src: WhoamiImage3, format: "avif" })
 ---
 
 <section id="AboutMe" class="grid grid-cols-1 gap-10">
@@ -33,10 +42,15 @@ import ReadMoreText from "./ui/ReadMoreText"
     </div>
   </div>
 
-  <ResponsiveImage
+  <SlideShow
+    images={[image1.src, image2.src, image3.src]}
+    navigation
+    client:load
+  />
+  <!-- <ResponsiveImage
     alt="Site intro"
     src={WhoamiImage}
     sizes={[400, 700, 900]}
     format="avif"
-  />
+  /> -->
 </section>

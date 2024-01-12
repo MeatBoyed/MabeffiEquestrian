@@ -1,0 +1,25 @@
+---
+import { getImage } from "astro:assets"
+import BannerImage from "../assets/Banner.jpg"
+import { FaInstagram, FaWhatsapp, FaFacebook } from "react-icons/fa"
+import { ChevronDown } from "lucide-react"
+
+const bannerImg = await getImage({ src: BannerImage })
+---
+
+<section
+  id="banner"
+  class="flex h-[70vh] w-full items-end justify-center bg-cover bg-center bg-no-repeat "
+  style={{ backgroundImage: `url(${bannerImg.src})` }}
+>
+  <div
+    class="flex h-full w-full flex-col items-center justify-end bg-slate-950 bg-opacity-25 gap-2 text-primary-foreground pb-3"
+  >
+    <div class="flex items-center justify-center gap-5">
+      <FaInstagram className="h-8 w-8" />
+      <FaWhatsapp className="h-8 w-8" />
+      <FaFacebook className="h-8 w-8" />
+    </div>
+    <ChevronDown size={30} />
+  </div>
+</section>

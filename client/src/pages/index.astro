@@ -7,17 +7,23 @@ import HorseProfile from "@/components/HorseProfile.astro"
 import Events from "@/components/Events.astro"
 import Testimonials from "@/components/Testimonials.astro"
 import Services from "@/components/Services.astro"
+import Banner from "@/components/Banner.astro"
 ---
 
 <!-- Notion Checklist! -->
 <Layout title="Welcome to Astro.">
-  <Intro />
-  <WhoAmI />
-  <!-- Potentially switch to lines over Horse Profile -->
-  <div class="w-full border-b border-foreground"></div>
-  <Services />
-  <div class="w-full border-b border-foreground"></div>
-  <HorseProfile />
-  <Events />
-  <Testimonials />
+  <Banner />
+  <main
+    class="flex min-h-screen flex-col items-center justify-between gap-24 p-5 tracking-wider"
+  >
+    <Intro />
+    <WhoAmI />
+    <!-- Potentially switch to lines over Horse Profile -->
+    <!-- <div class="w-full border-b border-foreground"></div> -->
+    <Services />
+    <!-- <div class="w-full border-b border-foreground"></div> -->
+    <HorseProfile />
+    <Events />
+    <Testimonials />
+  </main>
 </Layout>
