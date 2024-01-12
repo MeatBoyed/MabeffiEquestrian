@@ -19,6 +19,7 @@ export const typographyVariants = cva("m-0 p-0", {
       large: "text-lg font-semibold",
       small: "text-sm font-medium leading-none",
       muted: "text-sm text-muted-foreground",
+      removePMargin: "[&:not(:first-child)]:mt-0",
     },
   },
   defaultVariants: {

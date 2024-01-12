@@ -5,23 +5,23 @@ import { FaInstagram } from "react-icons/fa6"
 import { FaFacebook } from "react-icons/fa6"
 ---
 
-<div class="flex w-full flex-col items-center justify-center gap-10">
-  <div class="flex w-full items-start justify-between">
+<div class="flex w-full flex-col items-center justify-center gap-10 md:gap-16">
+  <div class="flex w-full items-start justify-between md:items-center">
     <Typography variant={"h3"} className="text-start">
       Mabeffi Equestrian
     </Typography>
 
     <!-- Links -->
-    <div class="flex flex-col items-start justify-center">
-      <Typography variant={"p"}>About Me</Typography>
-      <Typography variant={"p"}>Services</Typography>
-      <Typography variant={"p"}>Horse asd</Typography>
-      <Typography variant={"p"}>Events</Typography>
+    <div class="flex flex-col items-start justify-center md:flex-row md:items-center md:gap-10">
+      <Typography variant={"p"} affects={"removePMargin"} >About Me</Typography>
+      <Typography variant={"p"} affects={"removePMargin"} >Services</Typography>
+      <Typography variant={"p"} affects={"removePMargin"}>Horse asd</Typography>
+      <Typography variant={"p"} affects={"removePMargin"}>Events</Typography>
     </div>
   </div>
 
   <!-- Social Media -->
-  <div class="flex w-[50%] items-center justify-between">
+  <div class="flex w-[50%] items-center justify-between md:justify-center md:gap-20">
     <FaInstagram className="h-10 w-10" />
     <FaWhatsapp className="h-10 w-10" />
     <FaFacebook className="h-10 w-10" />
