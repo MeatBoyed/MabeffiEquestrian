@@ -6,7 +6,6 @@ import { Check } from "lucide-react"
 
 type Service = {
   title: string
-  image: string
   description: string
   intails: string[]
   bookWhat: string
@@ -16,7 +15,7 @@ interface Props {
 }
 
 const {
-  service: { title, image, description, intails, bookWhat },
+  service: { title,  description, intails, bookWhat },
 } = Astro.props
 ---
 

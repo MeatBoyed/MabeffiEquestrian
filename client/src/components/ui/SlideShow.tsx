@@ -24,8 +24,8 @@ export default function ServicesCarousel({
         modules={[Navigation, Pagination]}
         className="mySwiper"
       >
-        {images.map((image) => (
-          <SwiperSlide>
+        {images.map((image, index) => (
+          <SwiperSlide key={index}>
             <img src={image} />
           </SwiperSlide>
         ))}
