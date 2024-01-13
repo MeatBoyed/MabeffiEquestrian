@@ -5,7 +5,7 @@ import { FaWhatsapp } from "react-icons/fa"
 import RidingImg from "@/assets/ServiceCard1.jpg"
 import PonyRideImg from "@/assets/ServiceCard2.jpg"
 import { Button } from "./ui/button"
-import ServiceCardAlt from "./ui/ServiceCardAlt.astro"
+import ServiceCard from "./ui/ServiceCard.astro"
 
 const RidingImage = await getImage({ src: RidingImg, format: "avif" })
 const PonyRideImage = await getImage({ src: PonyRideImg, format: "avif" })
@@ -60,21 +60,27 @@ const servicesOffer = [
   </div>
 
   <!-- Services -->
-  <div class="w-full grid grid-cols-1 gap-5 content-center items-center">
-  <!-- <div class="w-full flex justify-center items-center gap-5 flex-wrap"> -->
+  <div
+    class="flex w-full flex-col items-center justify-center gap-10 lg:flex-row"
+  >
     <!-- {servicesOffer.map((service) => <ServiceCard service={service} />)} -->
-    {servicesOffer.map((service) => <ServiceCardAlt service={service} />)}
- </div>
+    <div class="flex flex-col items-center justify-center gap-10 md:flex-row">
+      <ServiceCard service={servicesOffer[0]} />
+      <ServiceCard service={servicesOffer[0]} />
+    </div>
 
-  <div class="flex flex-col items-center justify-center text-center">
-    <Button className="gap-3">
-      <FaWhatsapp className="h-5 w-5 " />
-      <p>Get In Touch</p>
-    </Button>
-    <Typography variant={"p"}>
-      Unlock your child's riding potential and create unforgettable memories
-      together. Get started today by clicking the button below!
-    </Typography>
+    <ServiceCard service={servicesOffer[0]} />
   </div>
-  <div class="w-full border-b border-foreground"></div>
 </section>
+
+<div class="flex flex-col items-center justify-center text-center">
+  <Button className="gap-3">
+    <FaWhatsapp className="h-5 w-5 " />
+    <p>Get In Touch</p>
+  </Button>
+  <Typography variant={"p"}>
+    Unlock your child's riding potential and create unforgettable memories
+    together. Get started today by clicking the button below!
+  </Typography>
+</div>
+<div class="w-full border-b border-foreground"></div>

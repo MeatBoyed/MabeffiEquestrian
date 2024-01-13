@@ -1,9 +1,8 @@
 ---
-import { Card, CardContent,   CardFooter,   CardHeader } from "@/components/ui/card"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import Typography from "./Typography"
 import { Button } from "./button"
 import { Check } from "lucide-react"
-
 
 type Service = {
   title: string
@@ -21,27 +20,30 @@ const {
 } = Astro.props
 ---
 
+<Card
+  className="grid min-w-[10%] grid-cols-1 content-center  items-center gap-5"
+>
+  <!-- <img src={image} alt="Service Card Image" class="w-full" /> -->
 
-<Card className="w-full grid grid-cols-1 gap-5  content-center items-center">
-    <!-- <img src={image} alt="Service Card Image" class="w-full" /> -->
-
-    <CardHeader className="">
-      <Typography variant={"h2"} className="text-center">{title}</Typography>
-      <Typography variant={"p"} affects={"muted"} className="text-center">{description}</Typography>
-    </CardHeader>
-    <CardContent>
-        {intails.map((intail) => (
-
-        <div class="flex justify-start items-center gap-3">
-            <Check />
-            <Typography variant={"p"} affects={"removePMargin"}>{intail}</Typography>
+  <CardHeader className="">
+    <Typography variant={"h2"} className="text-center">{title}</Typography>
+    <Typography variant={"p"} affects={"muted"} className="text-center">
+      {description}
+    </Typography>
+  </CardHeader>
+  <CardContent>
+    {
+      intails.map((intail) => (
+        <div class="flex items-center justify-start gap-3">
+          <Check />
+          <Typography variant={"p"} affects={"removePMargin"}>
+            {intail}
+          </Typography>
         </div>
-        ))}
-    </CardContent>
-    <CardFooter className="w-full">
-
-        <Button className="w-full">Book A Ride</Button>
-    </CardFooter>
-
-  </Card>
-  
+      ))
+    }
+  </CardContent>
+  <CardFooter className="w-full">
+    <Button className="w-full">Book A {bookWhat}</Button>
+  </CardFooter>
+</Card>
