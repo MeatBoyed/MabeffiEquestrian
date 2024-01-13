@@ -1,10 +1,9 @@
 ---
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
+import { Card, CardContent,   CardFooter,   CardHeader } from "@/components/ui/card"
 import Typography from "./Typography"
 import { Button } from "./button"
-import { cn } from "@/lib/utils"
+import { Check } from "lucide-react"
 
-const sizingStyle = "min-h-[55vh] min-w-[60%] max-w-[70%]"
 
 type Service = {
   title: string
@@ -22,33 +21,27 @@ const {
 } = Astro.props
 ---
 
-<!-- Maintain Ratio when making responsive -->
-<div
-  class={cn(sizingStyle, "bg-cover bg-center, rounded-lg")}
-  style={{ backgroundImage: `url(${image})` }}
->
-  <!-- Content -->
-  <div
-    class="flex min-h-[55vh] w-full flex-col items-center justify-between rounded-lg bg-slate-950 bg-opacity-55 text-primary-foreground"
-  >
-    <CardHeader className="text-center">
-      <Typography variant={"h2"} className="text-5xl">{title}</Typography>
-      <Typography variant={"p"}>{description}</Typography>
+
+<Card className="w-full grid grid-cols-1 gap-5  content-center items-center">
+    <!-- <img src={image} alt="Service Card Image" class="w-full" /> -->
+
+    <CardHeader className="">
+      <Typography variant={"h2"} className="text-center">{title}</Typography>
+      <Typography variant={"p"} affects={"muted"} className="text-center">{description}</Typography>
     </CardHeader>
     <CardContent>
-      <div class="flex flex-col items-center justify-center text-center">
-        {
-          intails.map((intail) => (
-            <Typography variant="p" affects="small">
-              {intail}
-            </Typography>
-          ))
-        }
-      </div>
-    </CardContent>
+        {intails.map((intail) => (
 
-    <CardFooter>
-      <Button>Book A {bookWhat}</Button>
+        <div class="flex justify-start items-center gap-3">
+            <Check />
+            <Typography variant={"p"} affects={"removePMargin"}>{intail}</Typography>
+        </div>
+        ))}
+    </CardContent>
+    <CardFooter className="w-full">
+
+        <Button className="w-full">Book A Ride</Button>
     </CardFooter>
-  </div>
-</div>
+
+  </Card>
+  

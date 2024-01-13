@@ -27,11 +27,9 @@ export default function DropDown() {
           </a>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <a href="/#AboutMe">
-            <Typography variant={"p"} affects={"large"}>
-              Services
-            </Typography>
-          </a>
+          <Typography variant={"p"} affects={"large"}>
+            <a href="/#/AboutMe">Services</a>
+          </Typography>
         </DropdownMenuItem>
         <DropdownMenuItem>
           <a href="/#AboutMe">

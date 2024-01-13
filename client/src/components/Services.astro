@@ -1,11 +1,11 @@
 ---
 import { getImage } from "astro:assets"
-import ServiceCard from "./ui/ServiceCard.astro"
 import Typography from "./ui/Typography"
 import { FaWhatsapp } from "react-icons/fa"
 import RidingImg from "@/assets/ServiceCard1.jpg"
 import PonyRideImg from "@/assets/ServiceCard2.jpg"
 import { Button } from "./ui/button"
+import ServiceCardAlt from "./ui/ServiceCardAlt.astro"
 
 const RidingImage = await getImage({ src: RidingImg, format: "avif" })
 const PonyRideImage = await getImage({ src: PonyRideImg, format: "avif" })
@@ -60,9 +60,11 @@ const servicesOffer = [
   </div>
 
   <!-- Services -->
-  <div class="w-full">
-    {servicesOffer.map((service) => <ServiceCard service={service} />)}
-  </div>
+  <div class="w-full grid grid-cols-1 gap-5 content-center items-center">
+  <!-- <div class="w-full flex justify-center items-center gap-5 flex-wrap"> -->
+    <!-- {servicesOffer.map((service) => <ServiceCard service={service} />)} -->
+    {servicesOffer.map((service) => <ServiceCardAlt service={service} />)}
+ </div>
 
   <div class="flex flex-col items-center justify-center text-center">
     <Button className="gap-3">
