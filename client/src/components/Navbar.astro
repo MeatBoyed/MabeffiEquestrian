@@ -1,6 +1,14 @@
 ---
 import Typography from "@/components/ui/Typography"
 import DropDown from "@/components/ui/DropDown"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select"
+import { Menu } from "lucide-react"
 ---
 
 <nav
@@ -8,5 +16,72 @@ import DropDown from "@/components/ui/DropDown"
   class="flex w-full items-center justify-between border-b border-slate-300 p-5 md:pl-14 md:pr-14 lg:pl-28 lg:pr-28"
 >
   <Typography variant="h3" className="">Mabeffi Equestrian</Typography>
-  <DropDown client:load />
+
+  <div class="hidden items-center justify-center gap-5 md:flex">
+    <a href="/#AboutMe">
+      <Typography variant={"p"} affects={"large"}>About Me</Typography>
+    </a>
+    <a href="/#AboutMe">
+      <Typography variant={"p"} affects={"large"}>Services</Typography>
+    </a>
+    <a href="/#AboutMe">
+      <Typography variant={"p"} affects={"large"}>Horse</Typography>
+    </a>
+    <a href="/#AboutMe">
+      <Typography variant={"p"} affects={"large"}>Testimonials</Typography>
+    </a>
+  </div>
+
+  <div class="group relative inline-block">
+    <Menu />
+    <div
+      class="absolute right-0 hidden rounded-md border border-popover bg-popover p-4 text-popover-foreground shadow-md group-hover:block"
+    >
+      <a class="my-2 w-full bg-popover" href="#AboutMe">
+        <Typography
+          variant="p"
+          affects={"large"}
+          className="font-semibold text-popover-foreground"
+        >
+          About me
+        </Typography>
+      </a>
+      <a class="my-2 w-full bg-popover" href="#Services">
+        <Typography
+          variant="p"
+          affects={"large"}
+          className="font-semibold text-popover-foreground"
+        >
+          Services
+        </Typography>
+      </a>
+      <a class="my-2 w-full bg-popover" href="#Horses">
+        <Typography
+          variant="p"
+          affects={"large"}
+          className="font-semibold text-popover-foreground"
+        >
+          Horses
+        </Typography>
+      </a>
+      <a class="my-2 w-full bg-popover" href="#Testimonials">
+        <Typography
+          variant="p"
+          affects={"large"}
+          className="font-semibold text-popover-foreground"
+        >
+          Testimonials
+        </Typography>
+      </a>
+      <a class="my-2 w-full bg-popover" href="#Testimonials">
+        <Typography
+          variant="p"
+          affects={"large"}
+          className="font-semibold text-popover-foreground"
+        >
+          Contact
+        </Typography>
+      </a>
+    </div>
+  </div>
 </nav>
