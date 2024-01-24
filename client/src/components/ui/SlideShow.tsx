@@ -22,7 +22,7 @@ export default function ServicesCarousel({
         }}
         navigation={navigation}
         modules={[Navigation, Pagination]}
-        className="mySwiper"
+        className="mySwiper z-0"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>

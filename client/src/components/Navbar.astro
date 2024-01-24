@@ -7,9 +7,11 @@ import { ContactMeLink } from "@/lib/ClientData"
 
 <nav
   id="Navbar"
-  class="flex w-full items-center justify-between border-b border-slate-300 p-5 md:pl-14 md:pr-14 lg:pl-28 lg:pr-28"
+  class="fixed top-0 z-10 flex w-full items-center justify-between border-b border-slate-300 bg-background p-5 md:pl-14 md:pr-14 lg:pl-28 lg:pr-28"
 >
-  <Typography variant="h3" className="">Mabeffi Equestrian</Typography>
+  <a href="/#banner">
+    <Typography variant="h3" className="">Mabeffi Equestrian</Typography>
+  </a>
 
   <div class="hidden items-center justify-center gap-3 md:flex lg:gap-5">
     <a href="/#AboutMe">
@@ -22,7 +24,9 @@ import { ContactMeLink } from "@/lib/ClientData"
       <Typography variant={"p"} className="font-medium">Horse</Typography>
     </a>
     <a href="/#Reviews">
-      <Typography variant={"p"} className="font-medium">Testimonials</Typography>
+      <Typography variant={"p"} className="font-medium">
+        Testimonials
+      </Typography>
     </a>
   </div>
 
