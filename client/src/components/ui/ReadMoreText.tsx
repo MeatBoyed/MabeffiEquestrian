@@ -13,27 +13,22 @@ export default function WhoAmIBodyText({
   together,
 }: {
   part1: string
-  part2: string
+  part2?: string
   part3?: string
   together?: boolean
 }) {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <Collapsible onOpenChange={(open) => setIsOpen(open)}>
-      <CollapsibleContent className="">
-        <Typography variant={"p"}>
-          <br />
+      <CollapsibleContent className="flex flex-col items-start justify-center gap-2">
+        <Typography variant={"p"} affects={"removePMargin"}>
           {part1}
-          <br />
-          {!together && <br />}
+        </Typography>
+        <Typography variant={"p"} affects={"removePMargin"}>
           {part2}
-          {part3 && (
-            <>
-              <br />
-              {!together && <br />}
-              {part3}
-            </>
-          )}
+        </Typography>
+        <Typography variant={"p"} affects={"removePMargin"}>
+          {part3}
         </Typography>
       </CollapsibleContent>
       <CollapsibleTrigger style={{ marginTop: !isOpen ? "" : "0.75rem" }}>

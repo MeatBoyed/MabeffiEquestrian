@@ -15,12 +15,12 @@ interface Props {
 }
 
 const {
-  service: { title,  description, intails, bookWhat },
+  service: { title, description, intails, bookWhat },
 } = Astro.props
 ---
 
 <Card
-  className="grid min-w-[10%] grid-cols-1 content-center  items-center gap-5"
+  className="grid w-full md:w-[50%] grid-cols-1 content-center  items-center gap-5"
 >
   <!-- <img src={image} alt="Service Card Image" class="w-full" /> -->
 
@@ -30,12 +30,12 @@ const {
       {description}
     </Typography>
   </CardHeader>
-  <CardContent>
+  <CardContent className="flex flex-col justify-start items-start gap-2">
     {
       intails.map((intail) => (
-        <div class="flex items-center justify-start gap-3">
-          <Check />
-          <Typography variant={"p"} affects={"removePMargin"}>
+        <div class="flex items-start justify-start gap-3">
+          <Check width={26} height={26} className="w-6 h-6" />
+          <Typography variant={"p"} className="" affects={"removePMargin"}>
             {intail}
           </Typography>
         </div>
