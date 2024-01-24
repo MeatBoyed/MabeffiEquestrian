@@ -9,18 +9,19 @@ type Service = {
   description: string
   intails: string[]
   bookWhat: string
+  link: string
 }
 interface Props {
   service: Service
 }
 
 const {
-  service: { title, description, intails, bookWhat },
+  service: { title, description, intails, bookWhat, link },
 } = Astro.props
 ---
 
 <Card
-  className="grid w-full md:w-[50%] grid-cols-1 content-center  items-center gap-5"
+  className="grid w-full grid-cols-1 content-between items-center gap-5 md:h-[24rem] md:w-[50%] lg:h-[28rem] xl:h-[22rem]"
 >
   <!-- <img src={image} alt="Service Card Image" class="w-full" /> -->
 
@@ -30,7 +31,7 @@ const {
       {description}
     </Typography>
   </CardHeader>
-  <CardContent className="flex flex-col justify-start items-start gap-2">
+  <CardContent className="flex flex-col items-start justify-start gap-2">
     {
       intails.map((intail) => (
         <div class="flex items-start justify-start gap-3">
@@ -43,6 +44,6 @@ const {
     }
   </CardContent>
   <CardFooter className="w-full">
-    <Button className="w-full">Book A {bookWhat}</Button>
+    <Button className="w-full"><a href={link}>Book A {bookWhat}</a></Button>
   </CardFooter>
 </Card>

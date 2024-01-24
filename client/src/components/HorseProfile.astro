@@ -56,12 +56,25 @@ import ReadMoreText from "./ui/ReadMoreText"
         introduction to the world of horses, making him the perfect partner for
         riders of all levels.
       </Typography>
-      <ReadMoreText
-        part1="Donny's success extends beyond his loving personality. He has showcased his talent and skill by successfully competing at the 1.10cm level in show jumping and demonstrating his prowess in elementary level dressage. These achievements are a testament to his abilities and his commitment to excellence."
-        client:load
-      />
+      <Typography
+        variant={"p"}
+        affects={"removePMargin"}
+        className="hidden xl:block"
+      >
+        Donny's success extends beyond his loving personality. He has showcased
+        his talent and skill by successfully competing at the 1.10cm level in
+        show jumping and demonstrating his prowess in elementary level dressage.
+        These achievements are a testament to his abilities and his commitment
+        to excellence.
+      </Typography>
+      <div class="xl:hidden">
+        <ReadMoreText
+          part1="Donny's success extends beyond his loving personality. He has showcased his talent and skill by successfully competing at the 1.10cm level in show jumping and demonstrating his prowess in elementary level dressage. These achievements are a testament to his abilities and his commitment to excellence."
+          client:load
+        />
+      </div>
     </div>
 
-    <Button>Book a Lesson with Me</Button>
+    <Button><a href="#Services"> Book a Lesson with Me</a></Button>
   </div>
 </section>

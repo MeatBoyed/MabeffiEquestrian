@@ -2,6 +2,7 @@
 import Typography from "@/components/ui/Typography"
 import DropDown from "./ui/DropDown.astro"
 import { Button } from "./ui/button"
+import { ContactMeLink } from "@/lib/ClientData"
 ---
 
 <nav
@@ -25,7 +26,9 @@ import { Button } from "./ui/button"
     </a>
   </div>
 
-  <Button className="hidden md:block">Contact</Button>
+  <Button className="hidden md:block">
+    <a href={ContactMeLink}> Contact</a>
+  </Button>
 
   <DropDown />
 </nav>

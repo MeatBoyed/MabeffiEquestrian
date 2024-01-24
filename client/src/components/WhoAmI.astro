@@ -8,6 +8,7 @@ import { getImage } from "astro:assets"
 import WhoamiImage from "@/assets/WhoAmI.jpg"
 import WhoamiImage2 from "@/assets/WhoAmI2.jpg"
 import WhoamiImage3 from "@/assets/WhoAmI3.jpg"
+import { ContactMeLink } from "@/lib/ClientData"
 
 const image1 = await getImage({ src: WhoamiImage, format: "avif" })
 const image2 = await getImage({ src: WhoamiImage2, format: "avif" })
@@ -29,16 +30,36 @@ const image3 = await getImage({ src: WhoamiImage3, format: "avif" })
         am eager to pass on to my students. I have successfully competed in both
         show jumping and dressage on a national level.
       </Typography>
-      <ReadMoreText
-        part1="With a focus on personalized instruction, I strive to create a positive and supportive environment for my students. Whether your child is a beginner or an experienced rider, I will tailor each lesson to their individual needs and goals."
-        part2="My teaching philosophy emphasizes safety, technique, and the development of a strong bond between rider and horse. I believe that horse riding is not just a sport but a way to develop important life skills such as discipline, confidence, and empathy."
-        client:load
-      />
+
+      <div class="hidden flex-col items-start justify-center gap-2 xl:flex">
+        <Typography variant={"p"} affects={"removePMargin"}>
+          With a focus on personalized instruction, I strive to create a
+          positive and supportive environment for my students. Whether your
+          child is a beginner or an experienced rider, I will tailor each lesson
+          to their individual needs and goals.
+        </Typography>
+        <Typography variant={"p"} affects={"removePMargin"}>
+          My teaching philosophy emphasizes safety, technique, and the
+          development of a strong bond between rider and horse. I believe that
+          horse riding is not just a sport but a way to develop important life
+          skills such as discipline, confidence, and empathy.
+        </Typography>
+      </div>
+
+      <div class="xl:hidden">
+        <ReadMoreText
+          part1="With a focus on personalized instruction, I strive to create a positive and supportive environment for my students. Whether your child is a beginner or an experienced rider, I will tailor each lesson to their individual needs and goals."
+          part2="My teaching philosophy emphasizes safety, technique, and the development of a strong bond between rider and horse. I believe that horse riding is not just a sport but a way to develop important life skills such as discipline, confidence, and empathy."
+          client:load
+        />
+      </div>
     </div>
 
     <div class="flex items-center justify-center gap-3">
-      <Button>Meet Donny</Button>
-      <Button variant={"outline"}>Contact Me</Button>
+      <Button><a href="#Horse">Meet Donny</a></Button>
+      <Button variant={"outline"}>
+        <a href={ContactMeLink}>Contact Me</a>
+      </Button>
     </div>
   </div>
 

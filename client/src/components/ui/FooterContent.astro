@@ -1,4 +1,5 @@
 ---
+import { SocialMediaLinks } from "@/lib/ClientData"
 import Typography from "./Typography"
 import { FaWhatsapp } from "react-icons/fa"
 import { FaInstagram } from "react-icons/fa6"
@@ -7,18 +8,32 @@ import { FaFacebook } from "react-icons/fa6"
 
 <div class="flex w-full flex-col items-center justify-center gap-10 md:gap-16">
   <div class="flex w-full items-start justify-between md:items-center">
-    <Typography variant={"h3"} className="text-start">
-      Mabeffi Equestrian
-    </Typography>
+    <a href="#banner">
+      <Typography variant={"h3"} className="text-start">
+        Mabeffi Equestrian
+      </Typography>
+    </a>
 
     <!-- Links -->
     <div
       class="flex flex-col items-start justify-center md:flex-row md:items-center md:gap-10"
     >
-      <Typography variant={"p"} affects={"removePMargin"}>About Me</Typography>
-      <Typography variant={"p"} affects={"removePMargin"}>Services</Typography>
-      <Typography variant={"p"} affects={"removePMargin"}>Horse asd</Typography>
-      <Typography variant={"p"} affects={"removePMargin"}>Events</Typography>
+      <a href="#AboutMe">
+        <Typography variant={"p"} affects={"removePMargin"}>
+          About Me
+        </Typography>
+      </a>
+      <a href="#Services">
+        <Typography variant={"p"} affects={"removePMargin"}>
+          Services
+        </Typography>
+      </a>
+      <a href="#Horse">
+        <Typography variant={"p"} affects={"removePMargin"}>Horse</Typography>
+      </a>
+      <a href="#Events">
+        <Typography variant={"p"} affects={"removePMargin"}>Events</Typography>
+      </a>
     </div>
   </div>
 
@@ -26,8 +41,14 @@ import { FaFacebook } from "react-icons/fa6"
   <div
     class="flex w-[50%] items-center justify-between md:justify-center md:gap-20"
   >
-    <FaInstagram className="h-10 w-10" />
-    <FaWhatsapp className="h-10 w-10" />
-    <FaFacebook className="h-10 w-10" />
+    <a href={SocialMediaLinks.Instagram}>
+      <FaInstagram className="h-10 w-10" />
+    </a>
+    <a href={SocialMediaLinks.WhatsApp}>
+      <FaWhatsapp className="h-10 w-10" />
+    </a>
+    <a href={SocialMediaLinks.Facebook}>
+      <FaFacebook className="h-10 w-10" />
+    </a>
   </div>
 </div>
