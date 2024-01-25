@@ -16,7 +16,7 @@ const bannerImg = await getImage({ src: BannerImage, format: "avif" })
   <div
     class="flex h-full w-full flex-col items-center justify-end gap-2 bg-slate-950 bg-opacity-25 pb-3 text-primary-foreground"
   >
-    <motion.div initial={{ y: +100}} animate={{y: 0}} transition={{ duration: 2, bounce: 0.6, type: "spring" }} client:visible className="flex items-center justify-center gap-5">
+    <div class="flex items-center justify-center gap-5 animate-fade animate-once animate-duration-[2500ms] animate-fill-forwards">
       <a href={SocialMediaLinks.Instagram}>
         <FaInstagram className="h-8 w-8 lg:h-10 lg:w-10" />
       </a>
@@ -26,9 +26,9 @@ const bannerImg = await getImage({ src: BannerImage, format: "avif" })
       <a href={SocialMediaLinks.Facebook}>
         <FaFacebook className="h-8 w-8 lg:h-10 lg:w-10" />
       </a>
-    </motion.div>
-    <motion.a href="#Intro" initial={{y: +100}} animate={{y: 0}} transition={{  repeat: Infinity,  duration: 2.5, bounce: 0.6, type: "spring" }} client:load>
-      <ChevronDown size={30} className="lg:h-10 lg:w-10" />
-    </motion.a>
+    </div>
+    <a href="#Intro" class="animate-fade animate-once animate-duration-[2500ms] animate-fill-forwards">
+      <ChevronDown size={30} className="lg:h-10 lg:w-10 animate-bounce animate-infinite animate-duration-[2000ms] animate-fill-forwards " />
+    </a>
   </div>
 </section>
