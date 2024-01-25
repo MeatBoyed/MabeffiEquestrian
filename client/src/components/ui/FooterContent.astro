@@ -4,19 +4,26 @@ import Typography from "./Typography"
 import { FaWhatsapp } from "react-icons/fa"
 import { FaInstagram } from "react-icons/fa6"
 import { FaFacebook } from "react-icons/fa6"
+
+import Logo from "@/assets/Logo-LowQuality.jpg"
+import { getImage } from "astro:assets"
+
+const img = await getImage({ src: Logo, format: "avif"})
 ---
 
 <div class="flex w-full flex-col items-center justify-center gap-10 md:gap-16">
   <div class="flex w-full items-start justify-between md:items-center">
     <a href="#banner">
       <Typography variant={"h3"} className="text-start">
-        Mabeffi Equestrian
+        Mabeffi <br class="md:hidden" /> Equestrian
       </Typography>
     </a>
 
+    <!-- <img src={img.src} class="w-28" /> -->
+
     <!-- Links -->
     <div
-      class="flex flex-col items-start justify-center md:flex-row md:items-center md:gap-10"
+      class="flex flex-col items-start justify-center gap-2 md:flex-row md:items-center md:gap-10"
     >
       <a href="#AboutMe">
         <Typography variant={"p"} affects={"removePMargin"}>
@@ -39,16 +46,16 @@ import { FaFacebook } from "react-icons/fa6"
 
   <!-- Social Media -->
   <div
-    class="flex w-[50%] items-center justify-between md:justify-center md:gap-20"
+    class="flex items-center justify-center gap-5 md:justify-center md:gap-10"
   >
     <a href={SocialMediaLinks.Instagram}>
-      <FaInstagram className="h-10 w-10" />
+      <FaInstagram className="h-7 w-7" />
     </a>
     <a href={SocialMediaLinks.WhatsApp}>
-      <FaWhatsapp className="h-10 w-10" />
+      <FaWhatsapp className="h-7 w-7" />
     </a>
     <a href={SocialMediaLinks.Facebook}>
-      <FaFacebook className="h-10 w-10" />
+      <FaFacebook className="h-7 w-7" />
     </a>
   </div>
 </div>
