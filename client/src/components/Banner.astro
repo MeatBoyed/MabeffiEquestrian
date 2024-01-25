@@ -4,18 +4,19 @@ import { getImage } from "astro:assets"
 import { FaInstagram, FaWhatsapp, FaFacebook } from "react-icons/fa"
 import { ChevronDown } from "lucide-react"
 import { BannerImage, SocialMediaLinks } from "@/lib/ClientData"
-const bannerImg = await getImage({ src: BannerImage})
+import { motion} from "framer-motion"
+const bannerImg = await getImage({ src: BannerImage, format: "avif" })
 ---
 
 <section
   id="banner"
-  class="flex h-[70vh] mt-16 md:mt-20 w-full items-end justify-center bg-cover bg-top bg-no-repeat xl:mt-16"
+  class="mt-16 flex h-[70vh] w-full items-end justify-center bg-cover bg-top bg-no-repeat md:mt-20 xl:mt-16"
   style={{ backgroundImage: `url(${bannerImg.src})` }}
 >
   <div
     class="flex h-full w-full flex-col items-center justify-end gap-2 bg-slate-950 bg-opacity-25 pb-3 text-primary-foreground"
   >
-    <div class="flex items-center justify-center gap-5">
+    <motion.div initial={{ y: +100}} animate={{y: 0}} transition={{ duration: 2, bounce: 0.6, type: "spring" }} client:visible className="flex items-center justify-center gap-5">
       <a href={SocialMediaLinks.Instagram}>
         <FaInstagram className="h-8 w-8 lg:h-10 lg:w-10" />
       </a>
@@ -25,9 +26,9 @@ const bannerImg = await getImage({ src: BannerImage})
       <a href={SocialMediaLinks.Facebook}>
         <FaFacebook className="h-8 w-8 lg:h-10 lg:w-10" />
       </a>
-    </div>
-    <a href="#Intro">
+    </motion.div>
+    <motion.a href="#Intro" initial={{y: +100}} animate={{y: 0}} transition={{  repeat: Infinity,  duration: 2.5, bounce: 0.6, type: "spring" }} client:load>
       <ChevronDown size={30} className="lg:h-10 lg:w-10" />
-    </a>
+    </motion.a>
   </div>
 </section>

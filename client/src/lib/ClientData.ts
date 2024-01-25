@@ -1,5 +1,5 @@
 // Banner Images
-import Banner from "@/assets/Banner.JPG"
+import Banner from "@/assets/Banner.jpg"
 // import FixedBanner from "@/assets/Banner/PromoFixedCloseUp.jpeg"
 
 // Intro Opt
@@ -12,7 +12,6 @@ import Slide1 from "@/assets/About Me/Slide 1.jpeg"
 import Slide2 from "@/assets/About Me/Slide 2.jpeg"
 import Slide3 from "@/assets/About Me/Slide 3.jpeg"
 import Slide4 from "@/assets/About Me/Slide 4.jpeg"
-import Slide5 from "@/assets/About Me/Slide 5.jpg"
 
 // Donny Images
 import DSlide1 from "@/assets/DonNatello/Slide-1.jpeg"
@@ -37,7 +36,7 @@ const IntroImages = {
   secondary: IntroSecondary,
 }
 
-const AboutMeImages = [Slide1, Slide2, Slide3, Slide4, Slide5]
+const AboutMeImages = [Slide1, Slide2, Slide3, Slide4]
 
 const DonnyImages = [DSlide1, DSlide2, DSlide3, DSlide4]
 

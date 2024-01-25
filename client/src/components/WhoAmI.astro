@@ -6,15 +6,16 @@ import SlideShow from "./ui/SlideShow"
 import { AboutMeImages, ContactMeLink } from "@/lib/ClientData"
 import { getImage } from "astro:assets"
 
-const image1 = await getImage({ src: AboutMeImages[0], format: "avif"})
-const image2 = await getImage({ src: AboutMeImages[1], format: "avif"})
-const image3 = await getImage({ src: AboutMeImages[2], format: "avif"})
-const image4 = await getImage({ src: AboutMeImages[3], format: "avif"})
+const image1 = await getImage({ src: AboutMeImages[0], format: "avif" })
+// const image2 = await getImage({ src: AboutMeImages[1], format: "avif" })
+// const image3 = await getImage({ src: AboutMeImages[2], format: "avif" })
+// const image4 = await getImage({ src: AboutMeImages[3], format: "avif" })
+
 ---
 
 <section
   id="AboutMe"
-  class="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start md:content-between md:gap-10 lg:gap-20"
+  class="grid grid-cols-1 gap-10 md:grid-cols-2 md:content-between md:items-start md:gap-10 lg:gap-20"
 >
   <!-- Left Content -->
   <div class="flex w-full flex-col items-start justify-center gap-6">
@@ -60,9 +61,8 @@ const image4 = await getImage({ src: AboutMeImages[3], format: "avif"})
     </div>
   </div>
 
-
   <SlideShow
-    images={[image1.src, image2.src, image3.src, image4.src]}
+    images={[image1.src]}
     client:load
   />
   <!-- <ResponsiveImage

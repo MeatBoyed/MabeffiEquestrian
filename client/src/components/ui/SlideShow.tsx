@@ -1,9 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination } from "swiper/modules"
-import { Navigation, Autoplay } from "swiper/modules"
+import { Autoplay } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/pagination"
-// import "swiper/css/navigation"
 
 export default function ServicesCarousel({ images }: { images: string[] }) {
   return (
@@ -14,7 +13,6 @@ export default function ServicesCarousel({ images }: { images: string[] }) {
         pagination={{
           clickable: true,
         }}
-        // navigation={navigation}
         autoplay={{
           delay: 5500,
           disableOnInteraction: false,
@@ -24,7 +22,7 @@ export default function ServicesCarousel({ images }: { images: string[] }) {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <img src={image} />
+            <img src={image} alt={`Slide show image ${index}`} />
           </SwiperSlide>
         ))}
       </Swiper>

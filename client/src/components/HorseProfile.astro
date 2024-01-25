@@ -1,20 +1,18 @@
 ---
 import Typography from "@/components/ui/Typography"
 import { Button } from "@/components/ui/button"
-import HorseProfileImg from "@/assets/HorseProfile.jpg"
-import ResponsiveImage from "@/components/ui/ResponsiveImage.astro"
 import { Badge } from "@/components/ui/badge"
 import { Cake, Medal } from "lucide-react"
-import { FaHorseHead } from "react-icons/fa";
+import { FaHorseHead } from "react-icons/fa"
 import ReadMoreText from "./ui/ReadMoreText"
 import SlideShow from "./ui/SlideShow"
 import { getImage } from "astro:assets"
 import { DonnyImages } from "@/lib/ClientData"
 
-const image1 = await getImage({ src: DonnyImages[0], format: "avif"})
-const image2 = await getImage({ src: DonnyImages[1], format: "avif"})
-const image3 = await getImage({ src: DonnyImages[2], format: "avif"})
-const image4 = await getImage({ src: DonnyImages[3], format: "avif"})
+const image1 = await getImage({ src: DonnyImages[0], format: "avif" })
+// const image2 = await getImage({ src: DonnyImages[1], format: "avif" })
+// const image3 = await getImage({ src: DonnyImages[2], format: "avif" })
+// const image4 = await getImage({ src: DonnyImages[3], format: "avif" })
 ---
 
 <section
@@ -23,7 +21,7 @@ const image4 = await getImage({ src: DonnyImages[3], format: "avif"})
 >
   <!-- Left Carousel -->
   <SlideShow
-    images={[image1.src, image2.src, image3.src, image4.src]}
+    images={[image1.src ]}
     client:load
   />
 
@@ -38,7 +36,7 @@ const image4 = await getImage({ src: DonnyImages[3], format: "avif"})
         className="flex items-center justify-center gap-2 px-3 py-2"
       >
         <Typography variant={"p"} affects={"small"}>Thoroughbred</Typography>
-        <FaHorseHead style={{ width: "20px", height: "20px"}} />
+        <FaHorseHead style={{ width: "20px", height: "20px" }} />
       </Badge>
       <Badge
         variant={"secondary"}

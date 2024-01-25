@@ -10,12 +10,10 @@ export default function WhoAmIBodyText({
   part1,
   part2,
   part3,
-  together,
 }: {
   part1: string
   part2?: string
   part3?: string
-  together?: boolean
 }) {
   const [isOpen, setIsOpen] = useState(false)
   return (
