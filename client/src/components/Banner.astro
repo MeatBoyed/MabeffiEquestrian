@@ -4,7 +4,6 @@ import { getImage } from "astro:assets"
 import { FaInstagram, FaWhatsapp, FaFacebook } from "react-icons/fa"
 import { ChevronDown } from "lucide-react"
 import { BannerImage, SocialMediaLinks } from "@/lib/ClientData"
-import { motion} from "framer-motion"
 const bannerImg = await getImage({ src: BannerImage, format: "avif" })
 ---
 
@@ -16,7 +15,9 @@ const bannerImg = await getImage({ src: BannerImage, format: "avif" })
   <div
     class="flex h-full w-full flex-col items-center justify-end gap-2 bg-slate-950 bg-opacity-25 pb-3 text-primary-foreground"
   >
-    <div class="flex items-center justify-center gap-5 animate-fade animate-once animate-duration-[2500ms] animate-fill-forwards">
+    <div
+      class="flex animate-fade items-center justify-center gap-5 animate-duration-[2500ms] animate-fill-forwards animate-once"
+    >
       <a href={SocialMediaLinks.Instagram}>
         <FaInstagram className="h-8 w-8 lg:h-10 lg:w-10" />
       </a>
@@ -27,8 +28,14 @@ const bannerImg = await getImage({ src: BannerImage, format: "avif" })
         <FaFacebook className="h-8 w-8 lg:h-10 lg:w-10" />
       </a>
     </div>
-    <a href="#Intro" class="animate-fade animate-once animate-duration-[2500ms] animate-fill-forwards">
-      <ChevronDown size={30} className="lg:h-10 lg:w-10 animate-bounce animate-infinite animate-duration-[2000ms] animate-fill-forwards " />
+    <a
+      href="#Intro"
+      class="animate-fade animate-duration-[2500ms] animate-fill-forwards animate-once"
+    >
+      <ChevronDown
+        size={30}
+        className="animate-bounce animate-duration-[2000ms] animate-fill-forwards animate-infinite lg:h-10 lg:w-10 "
+      />
     </a>
   </div>
 </section>

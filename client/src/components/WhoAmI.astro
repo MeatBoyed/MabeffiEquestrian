@@ -7,10 +7,9 @@ import { AboutMeImages, ContactMeLink } from "@/lib/ClientData"
 import { getImage } from "astro:assets"
 
 const image1 = await getImage({ src: AboutMeImages[0], format: "avif" })
-// const image2 = await getImage({ src: AboutMeImages[1], format: "avif" })
-// const image3 = await getImage({ src: AboutMeImages[2], format: "avif" })
-// const image4 = await getImage({ src: AboutMeImages[3], format: "avif" })
-
+const image2 = await getImage({ src: AboutMeImages[1], format: "avif" })
+const image3 = await getImage({ src: AboutMeImages[2], format: "avif" })
+const image4 = await getImage({ src: AboutMeImages[3], format: "avif" })
 ---
 
 <section
@@ -62,8 +61,8 @@ const image1 = await getImage({ src: AboutMeImages[0], format: "avif" })
   </div>
 
   <SlideShow
-    images={[image1.src]}
-    client:load
+    images={[image1.src, image2.src, image3.src, image4.src]}
+    client:visible
   />
   <!-- <ResponsiveImage
     alt="Site intro"

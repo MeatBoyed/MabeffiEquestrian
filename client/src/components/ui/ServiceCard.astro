@@ -3,6 +3,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import Typography from "./Typography"
 import { Button } from "./button"
 import { Check } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 type Service = {
   title: string
@@ -10,18 +11,24 @@ type Service = {
   intails: string[]
   bookWhat: string
   link: string
+  primary?: boolean
 }
 interface Props {
   service: Service
+  primary?: boolean
 }
 
 const {
   service: { title, description, intails, bookWhat, link },
+  primary,
 } = Astro.props
 ---
 
 <Card
-  className="grid w-full grid-cols-1 content-between items-center gap-5 md:h-[24rem] md:w-[50%] lg:h-[28rem] xl:h-[22rem]"
+  className={cn(
+    "grid w-full grid-cols-1 content-between items-center gap-5 md:h-[24rem] md:w-[50%] lg:h-[28rem] xl:h-[22rem]",
+    primary && "bg-primary text-primary-foreground",
+  )}
 >
   <!-- <img src={image} alt="Service Card Image" class="w-full" /> -->
 
@@ -44,6 +51,8 @@ const {
     }
   </CardContent>
   <CardFooter className="w-full">
-    <Button className="w-full"><a href={link}>Book A {bookWhat}</a></Button>
+    <Button className={cn("w-full", primary && "bg-card text-card-foreground")}>
+      <a href={link}>Book A {bookWhat}</a>
+    </Button>
   </CardFooter>
 </Card>
