@@ -1,9 +1,8 @@
 ---
 import Typography from "@/components/ui/Typography"
 import { Button } from "@/components/ui/button"
-import IntroImg from "@/assets/IntroImg.jpg"
-import ShowJumping from "@/assets/ShowJumping.jpg"
 import ResponsiveImage from "@/components/ui/ResponsiveImage.astro"
+import { IntroImages } from "@/lib/ClientData"
 ---
 
 <section
@@ -11,14 +10,14 @@ import ResponsiveImage from "@/components/ui/ResponsiveImage.astro"
   class="mt-16 grid grid-cols-1 gap-6 md:mt-5 md:grid-cols-2 md:items-start md:gap-10 lg:mt-0 lg:gap-20"
 >
   <ResponsiveImage
-    alt="Site intro"
-    src={IntroImg}
+    alt="Side Profile shot of Don'Natello"
+    src={IntroImages.main}
     sizes={[400, 700, 900]}
     format="avif"
   />
 
   <!-- Right Content -->
-  <div class="flex w-full flex-col items-start justify-center gap-10">
+  <div class="flex w-full flex-col items-start justify-center gap-16">
     <div class="flex flex-col items-start justify-center gap-6">
       <div>
         <Typography variant={"h1"} className="">
@@ -35,9 +34,10 @@ import ResponsiveImage from "@/components/ui/ResponsiveImage.astro"
       <Button><a href="#Services">Book Now</a></Button>
     </div>
 
+    <!-- Remove image on Tablet & Desktop (Small) -->
     <ResponsiveImage
-      alt="Show Jumping"
-      src={ShowJumping}
+      alt="Mabeffi riding in a show jumping competition"
+      src={IntroImages.secondary}
       sizes={[200, 700, 900]}
       format="avif"
     />

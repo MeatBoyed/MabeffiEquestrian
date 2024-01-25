@@ -1,15 +1,15 @@
 ---
 import { getImage } from "astro:assets"
-import BannerImage from "../assets/Banner.jpg"
+// import BannerImage from "../assets/Banner.jpg"
 import { FaInstagram, FaWhatsapp, FaFacebook } from "react-icons/fa"
 import { ChevronDown } from "lucide-react"
-import { SocialMediaLinks } from "@/lib/ClientData"
-const bannerImg = await getImage({ src: BannerImage })
+import { BannerImage, SocialMediaLinks } from "@/lib/ClientData"
+const bannerImg = await getImage({ src: BannerImage})
 ---
 
 <section
   id="banner"
-  class="flex h-[70vh] w-full items-end justify-center bg-cover bg-center bg-no-repeat xl:mt-20"
+  class="flex h-[70vh] mt-16 md:mt-20 w-full items-end justify-center bg-cover bg-top bg-no-repeat xl:mt-16"
   style={{ backgroundImage: `url(${bannerImg.src})` }}
 >
   <div

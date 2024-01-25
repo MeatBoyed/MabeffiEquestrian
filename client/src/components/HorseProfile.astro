@@ -5,7 +5,16 @@ import HorseProfileImg from "@/assets/HorseProfile.jpg"
 import ResponsiveImage from "@/components/ui/ResponsiveImage.astro"
 import { Badge } from "@/components/ui/badge"
 import { Cake, Medal } from "lucide-react"
+import { FaHorseHead } from "react-icons/fa";
 import ReadMoreText from "./ui/ReadMoreText"
+import SlideShow from "./ui/SlideShow"
+import { getImage } from "astro:assets"
+import { DonnyImages } from "@/lib/ClientData"
+
+const image1 = await getImage({ src: DonnyImages[0], format: "avif"})
+const image2 = await getImage({ src: DonnyImages[1], format: "avif"})
+const image3 = await getImage({ src: DonnyImages[2], format: "avif"})
+const image4 = await getImage({ src: DonnyImages[3], format: "avif"})
 ---
 
 <section
@@ -13,11 +22,9 @@ import ReadMoreText from "./ui/ReadMoreText"
   class="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start md:gap-10 lg:gap-20"
 >
   <!-- Left Carousel -->
-  <ResponsiveImage
-    alt="Site intro"
-    src={HorseProfileImg}
-    sizes={[400, 700, 900]}
-    format="avif"
+  <SlideShow
+    images={[image1.src, image2.src, image3.src, image4.src]}
+    client:load
   />
 
   <!-- Right Content -->
@@ -28,20 +35,21 @@ import ReadMoreText from "./ui/ReadMoreText"
     <div class="flex w-full items-center justify-start gap-3">
       <Badge
         variant={"secondary"}
-        className="flex items-center justify-center gap-2"
+        className="flex items-center justify-center gap-2 px-3 py-2"
       >
         <Typography variant={"p"} affects={"small"}>Thoroughbred</Typography>
+        <FaHorseHead style={{ width: "20px", height: "20px"}} />
       </Badge>
       <Badge
         variant={"secondary"}
-        className="flex items-center justify-center gap-2"
+        className="flex items-center justify-center gap-2 px-3 py-2"
       >
         <Typography variant={"p"} affects={"small"}>16</Typography>
         <Cake />
       </Badge>
       <Badge
         variant={"secondary"}
-        className="flex items-center justify-center gap-2"
+        className="flex items-center justify-center gap-2 px-3 py-2"
       >
         <Typography variant={"p"} affects={"small"}>2</Typography>
         <Medal />
