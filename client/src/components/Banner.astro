@@ -1,9 +1,9 @@
 ---
 import { getImage } from "astro:assets"
-// import BannerImage from "../assets/Banner.jpg"
 import { FaInstagram, FaWhatsapp, FaFacebook } from "react-icons/fa"
 import { ChevronDown } from "lucide-react"
 import { BannerImage, SocialMediaLinks } from "@/lib/ClientData"
+
 const bannerImg = await getImage({ src: BannerImage, format: "avif" })
 ---
 

@@ -10,9 +10,9 @@ import { getImage } from "astro:assets"
 import { DonnyImages } from "@/lib/ClientData"
 
 const image1 = await getImage({ src: DonnyImages[0], format: "avif" })
-const image2 = await getImage({ src: DonnyImages[1], format: "avif" })
-const image3 = await getImage({ src: DonnyImages[2], format: "avif" })
-const image4 = await getImage({ src: DonnyImages[3], format: "avif" })
+// const image2 = await getImage({ src: DonnyImages[1], format: "avif" })
+// const image3 = await getImage({ src: DonnyImages[2], format: "avif" })
+// const image4 = await getImage({ src: DonnyImages[3], format: "avif" })
 ---
 
 <section
@@ -21,7 +21,7 @@ const image4 = await getImage({ src: DonnyImages[3], format: "avif" })
 >
   <!-- Left Carousel -->
   <SlideShow
-    images={[image1.src, image2.src, image3.src, image4.src]}
+    images={[image1.src ]}
     client:visible
   />
 
