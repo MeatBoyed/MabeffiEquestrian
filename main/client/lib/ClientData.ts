@@ -1,12 +1,14 @@
 import { EventType } from "@/components/Event";
 import { SiteImagesRepo } from "./siteConfig";
+import { ServiceCard, ServiceEnum } from "@/components/ServiceCard";
 
 export const SocialMediaLinks = {
   WhatsApp: "",
 };
 
-export const servicesOffer = [
+export const servicesOffer: ServiceCard[] = [
   {
+    service: ServiceEnum["Pony Rides"],
     title: "Pony Rides",
     description: "Enhance your riding skills",
     intails: [
@@ -16,27 +18,50 @@ export const servicesOffer = [
     ],
     bookWhat: "Ride",
     link: "",
+    dialog: {
+      title: "Book a Pony Ride",
+      description: "Leave your details and we I will get back to you as soon as possible",
+      button: "Book Now",
+    },
   },
   {
+    service: ServiceEnum["1 hour lesson"],
     title: "Hour Riding Lesson",
     description: "Enhance your riding skills",
     intails: ["Horse Riding", "Prepare horse for paddock", "Brushing & tackling horse"],
     bookWhat: "Lesson",
     link: "",
+    dialog: {
+      title: "Join the waiting list",
+      description: "Leave your details to join the waiting list for available riding lessons.",
+      button: "Join Now",
+    },
   },
   {
+    service: ServiceEnum["30 min lesson"],
     title: "30min Lesson",
     description: "Enhance your riding skills",
     intails: ["Horse Riding", "Ideal for Kids under 5", "Brushing & Tackling horse"],
     bookWhat: "Session",
     link: "",
+    dialog: {
+      title: "Book a 30min Lesson",
+      description: "Leave your details to book a 30min lesson.",
+      button: "Book Now",
+    },
   },
   {
+    service: ServiceEnum["photoshoot"],
     title: "Photo Shoot",
     description: "Enhance your riding skills",
     intails: ["Horse Riding", "Preparing horse for paddock", "Brushing & tackling horse for riding"],
     bookWhat: "Session",
     link: "",
+    dialog: {
+      title: "Book a Photo Shoot",
+      description: "Leave your details to book a photo shoot.",
+      button: "Book Now",
+    },
   },
 ];
 

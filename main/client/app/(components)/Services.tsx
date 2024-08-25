@@ -1,6 +1,7 @@
 import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import Typography from "@/components/ui/Typography";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { servicesOffer } from "@/lib/ClientData";
 import en from "@/lib/en";
 import { siteConfig } from "@/lib/siteConfig";
@@ -35,12 +36,7 @@ export default function Services() {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-4 text-center">
-        <Link href={siteConfig.links.whatsapp} className="">
-          <Button className="w-full gap-3">
-            <FaWhatsapp className="h-5 w-5 " />
-            <p>{en.services.button}</p>
-          </Button>
-        </Link>
+        <WhatsAppButton link={siteConfig.links.whatsapp} text={en.services.button} />
         <Typography variant={"p"} affects={"removePMargin"}>
           {en.services.buttonText}
         </Typography>

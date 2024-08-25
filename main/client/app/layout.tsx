@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
+import { Toaster } from "sonner";
 
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         {children}
         <Footer />
+        <Toaster richColors />
       </body>
     </html>
   );

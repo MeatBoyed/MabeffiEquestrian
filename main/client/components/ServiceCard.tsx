@@ -4,21 +4,37 @@ import { Button } from "./ui/button";
 import { Card, CardHeader, CardContent, CardFooter } from "./ui/card";
 import Typography from "./ui/Typography";
 import Link from "next/link";
+import LeadForm from "./LeadForm";
+import { DialogTitle, DialogDescription } from "@radix-ui/react-dialog";
+import { DialogHeader } from "./ui/dialog";
 
-interface ServiceCard {
+export const Service = ["photoshoot", "1 hour lesson", "30 min lesson", "Pony Rides"] as const;
+export const enum ServiceEnum {
+  "photoshoot" = "photoshoot",
+  "1 hour lesson" = "1 hour lesson",
+  "30 min lesson" = "30 min lesson",
+  "Pony Rides" = "Pony Rides",
+}
+export interface ServiceCard {
+  service: ServiceEnum;
   title: string;
   description: string;
   intails: string[];
   bookWhat: string;
   link: string;
+  dialog: {
+    title: string;
+    description: string;
+    button: string;
+  };
 }
 
 interface Props {
   service: ServiceCard;
   primary?: boolean;
 }
-export default function ServiceCard({ service, primary }: Props) {
-  const { title, description, intails, bookWhat, link } = service;
+export default function ServiceCard({ service: ServiceProp, primary }: Props) {
+  const { title, description, intails, bookWhat, link, service, dialog } = ServiceProp;
   return (
     <Card
       className={cn(
@@ -29,7 +45,7 @@ export default function ServiceCard({ service, primary }: Props) {
     >
       {/* <!-- <img src={image} alt="Service Card Image" class="w-full" /> --> */}
 
-      <CardHeader className=""> 
+      <CardHeader className="">
         <Typography variant={"h2"} className="text-center">
           {title}
         </Typography>
@@ -48,9 +64,16 @@ export default function ServiceCard({ service, primary }: Props) {
         ))}
       </CardContent>
       <CardFooter className="w-full">
-        <Button className={cn("w-full", primary && "bg-card text-card-foreground")}>
-          <Link href={link}>Book A {bookWhat}</Link>
-        </Button>
+        <LeadForm primary={primary} service={service} buttonText={bookWhat} whatsappLink={link}>
+          <DialogHeader>
+            <DialogTitle>
+              <Typography variant={"h2"}>{dialog.title}</Typography>
+            </DialogTitle>
+            <DialogDescription>
+              <Typography variant={"p"}>{dialog.description}</Typography>
+            </DialogDescription>
+          </DialogHeader>
+        </LeadForm>
       </CardFooter>
     </Card>
   );
