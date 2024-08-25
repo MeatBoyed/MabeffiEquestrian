@@ -19,6 +19,8 @@ import DSlide2 from "@/assets/DonNatello/Slide-2.jpeg"
 import DSlide3 from "@/assets/DonNatello/Slide-3.jpeg"
 import DSlide4 from "@/assets/DonNatello/Slide-4.jpeg"
 
+import EventsImg from "@/assets/Events.jpg"
+
 const SocialMediaLinks = {
   Facebook:
     "https://www.facebook.com/people/Mabeffi-Equestrian-Riding-School/61550360317560/",
@@ -40,6 +42,7 @@ const AboutMeImages = [Slide1, Slide2, Slide3, Slide4]
 
 const DonnyImages = [DSlide1, DSlide2, DSlide3, DSlide4]
 
+
 export {
   SocialMediaLinks,
   ContactMeLink,
@@ -47,4 +50,5 @@ export {
   BannerImage,
   AboutMeImages,
   DonnyImages,
+  EventsImg,
 }
