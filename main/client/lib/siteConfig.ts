@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "My ShadCN App",
-  description: "A Next.js 14 application with ShadCN UI components",
-  url: "https://your-domain.com",
+  name: "Mabeffi Equestrian",
+  description: "Mabeffi Equestrian is a riding school based in Walvis Bay, Namibia",
+  url: "https://mabeffiequestrian.com",
   ogImage: "https://your-domain.com/og.jpg",
   links: {
     instagram: "https://instagram.com/mabeffi.equestrian",
