@@ -4,7 +4,6 @@ import { Resend } from "resend";
 import { HTTPException } from "hono/http-exception";
 import { env } from "@/env";
 import { z } from "zod";
-import { isValidPhoneNumber } from "react-phone-number-input";
 import { Service } from "@/components/ServiceCard";
 
 const LeadFormSchema = z.object({
