@@ -13,7 +13,7 @@ export default function NotFound() {
         404 - Page Not Found
       </Typography>
       <Typography variant="p" className="text-xl mb-8 text-center max-w-md">
-        Looks like you've wandered off the trail. Let's get you back on track.
+        Looks like you&apos;ve wandered off the trail. Let&apos;s get you back on track.
       </Typography>
       <Link href="/">
         <Button size="lg">
