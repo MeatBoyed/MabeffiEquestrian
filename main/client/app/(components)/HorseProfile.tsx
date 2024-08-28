@@ -11,7 +11,7 @@ import en from "@/lib/en";
 
 export default function HorseProfile() {
   return (
-    <section id="Horse" className="grid grid-cols-1 gap-3 md:grid-cols-2 md:items-start md:gap-10 lg:gap-20">
+    <section id="Horse" className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-start md:gap-10 lg:gap-20">
       {/* <!-- Right Content --> */}
       <div className="flex w-full flex-col items-start justify-center gap-6">
         <Typography variant={"h1"} className="">

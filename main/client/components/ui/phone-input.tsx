@@ -47,7 +47,7 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> = React.forwa
 PhoneInput.displayName = "PhoneInput";
 
 const InputComponent = React.forwardRef<HTMLInputElement, InputProps>(({ className, ...props }, ref) => (
-  <Input className={cn("rounded-e-lg rounded-s-none", className)} {...props} ref={ref} />
+  <Input className={cn("rounded-e-lg rounded-s-none placeholder:text-black", className)} {...props} ref={ref} />
 ));
 InputComponent.displayName = "InputComponent";
 

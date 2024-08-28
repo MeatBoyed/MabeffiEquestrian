@@ -10,7 +10,7 @@ import en from "@/lib/en";
 export default function Footer() {
   return (
     <footer className="flex w-full flex-col items-center justify-center gap-8 pt-10 border-t border-foreground  ">
-      <div className="w-full max-w-screen-2xl mx-auto md:px-14 lg:px-28">
+      <div className="w-full max-w-screen-2xl mx-auto px-4 md:px-14 lg:px-28">
         <FooterContent />
       </div>
       <Branding />

@@ -81,7 +81,7 @@ export default function LeadForm({
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your name" {...field} />
+                    <Input placeholder="Your name" {...field} className="placeholder:text-black" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -94,7 +94,7 @@ export default function LeadForm({
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your email" {...field} />
+                    <Input placeholder="Your email" {...field} className="placeholder:text-black" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -107,9 +107,9 @@ export default function LeadForm({
                 <FormItem className="flex flex-col items-start">
                   <FormLabel className="text-left">Phone Number</FormLabel>
                   <FormControl className="w-full">
-                    <PhoneInput placeholder="Enter a phone number" defaultCountry="NA" {...field} />
+                    <PhoneInput placeholder="Enter a phone number" defaultCountry="NA" {...field} className="placeholder:text-black" />
                   </FormControl>
-                  <FormDescription className="text-left">Enter a phone number</FormDescription>
+                  <FormDescription className="text-left text-black">Enter a phone number</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -127,7 +127,7 @@ export default function LeadForm({
                           <FormControl>
                             <Button
                               variant={"outline"}
-                              className={cn("w-full pl-3 text-left font-normal", !field.value && "text-muted-foreground")}
+                              className={cn("w-full pl-3 text-left font-normal", !field.value && "text-black")}
                             >
                               {field.value ? format(field.value, "PPP") : <span>Pick a date</span>}
                               <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
@@ -144,7 +144,7 @@ export default function LeadForm({
                           />
                         </PopoverContent>
                       </Popover>
-                      <FormDescription>Select a date for your lesson/photo shoot.</FormDescription>
+                      <FormDescription className="text-black">Select a date for your lesson/photo shoot.</FormDescription>
                       <FormMessage />
                     </FormItem>
                   )}
