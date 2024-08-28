@@ -5,7 +5,7 @@ import { testimonials } from "@/lib/ClientData";
 
 export default function Testimonials() {
   return (
-    <section id="Reviews" className="flex flex-col items-center justify-center gap-10">
+    <section id="reviews" className="flex flex-col items-center justify-center gap-10">
       <Typography variant={"h1"} className="">
         Testimonials
       </Typography>

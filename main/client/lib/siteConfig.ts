@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Mabeffi Equestrian",
-  description: "Mabeffi Equestrian is a riding school based in Walvis Bay, Namibia",
+  description: "Mabeffi Equestrian is a riding school in Walvis Bay, Namibia",
   url: "https://mabeffiequestrian.com",
   ogImage: "https://your-domain.com/og.jpg",
   links: {

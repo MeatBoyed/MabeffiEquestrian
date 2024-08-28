@@ -15,7 +15,7 @@ const en = {
       },
       {
         text: "Testimonials",
-        path: "/#Reviews",
+        path: "/#reviews",
       },
     ],
   },

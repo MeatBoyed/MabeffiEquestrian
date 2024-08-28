@@ -43,13 +43,13 @@ export function FooterContent() {
       {/* <!-- Social Media --> */}
       <div className="flex items-center justify-center gap-5 md:justify-center md:gap-10">
         <Link href={siteConfig.links.instagram}>
-          <FaInstagram className="h-7 w-7" />
+          <FaInstagram className="h-7 w-7 hover:text-purple-600" />
         </Link>
         <Link href={siteConfig.links.whatsapp}>
-          <FaWhatsapp className="h-7 w-7" />
+          <FaWhatsapp className="h-7 w-7 hover:text-green-600" />
         </Link>
         <Link href={siteConfig.links.facebook}>
-          <FaFacebook className="h-7 w-7" />
+          <FaFacebook className="h-7 w-7 hover:text-blue-600" />
         </Link>
       </div>
     </div>

@@ -27,7 +27,10 @@ export default function Banner() {
               <Link className={cn(buttonVariants({ variant: "default" }))} href={en.banner.primaryButton.path}>
                 {en.banner.primaryButton.text}
               </Link>
-              <Link className={cn(buttonVariants({ variant: "outline", className: "border-0" }))} href={en.banner.secondaryButton.path}>
+              <Link
+                className={cn(buttonVariants({ variant: "outline", className: "border-0" }))}
+                href={en.banner.secondaryButton.path}
+              >
                 {en.banner.secondaryButton.text}
               </Link>
             </div>
@@ -36,13 +39,13 @@ export default function Banner() {
         <div className="flex flex-col items-center">
           <div className="flex animate-fade items-center justify-center gap-5 animate-duration-[2500ms] animate-fill-forwards animate-once mb-4">
             <Link href={siteConfig.links.instagram}>
-              <FaInstagram className="h-8 w-8 lg:h-10 lg:w-10" />
+              <FaInstagram className="h-8 w-8 lg:h-10 lg:w-10 hover:text-purple-600" />
             </Link>
             <Link href={siteConfig.links.whatsapp}>
-              <FaWhatsapp className="h-8 w-8 lg:h-10 lg:w-10" />
+              <FaWhatsapp className="h-8 w-8 lg:h-10 lg:w-10 hover:text-green-600" />
             </Link>
             <Link href={siteConfig.links.facebook}>
-              <FaFacebook className="h-8 w-8 lg:h-10 lg:w-10" />
+              <FaFacebook className="h-8 w-8 lg:h-10 lg:w-10 hover:text-blue-600" />
             </Link>
           </div>
           <Link href="#Intro" className="animate-fade animate-duration-[2500ms] animate-fill-forwards animate-once">
