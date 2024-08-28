@@ -12,7 +12,6 @@ import en from "@/lib/en";
 export default function HorseProfile() {
   return (
     <section id="Horse" className="grid grid-cols-1 gap-3 md:grid-cols-2 md:items-start md:gap-10 lg:gap-20">
-
       {/* <!-- Right Content --> */}
       <div className="flex w-full flex-col items-start justify-center gap-6">
         <Typography variant={"h1"} className="">
@@ -23,19 +22,19 @@ export default function HorseProfile() {
 
         {/* <!-- Badges --> */}
         <div className="flex w-full items-center justify-start gap-2 flex-wrap">
-          <Badge variant={"secondary"} className="flex items-center justify-center gap-2 px-3 py-2">
+          <Badge variant={"outline"} className="flex items-center justify-center gap-2 px-3 py-2">
             <Typography variant={"p"} affects={"small"}>
               {en.Donny.details.breed}
             </Typography>
             <FaHorseHead style={{ width: "20px", height: "20px" }} />
           </Badge>
-          <Badge variant={"secondary"} className="flex items-center justify-center gap-2 px-3 py-2">
+          <Badge variant={"outline"} className="flex items-center justify-center gap-2 px-3 py-2">
             <Typography variant={"p"} affects={"small"}>
               {en.Donny.details.age}
             </Typography>
             <Cake />
           </Badge>
-          <Badge variant={"secondary"} className="flex items-center justify-center gap-2 px-3 py-2">
+          <Badge variant={"outline"} className="flex items-center justify-center gap-2 px-3 py-2">
             <Typography variant={"p"} affects={"small"}>
               {en.Donny.details.achievements}
             </Typography>
@@ -59,7 +58,7 @@ export default function HorseProfile() {
           <Link href={en.Donny.button.path}>{en.Donny.button.text}</Link>
         </Button>
       </div>
-      
+
       {/* <!-- Left Carousel --> */}
       <SlideShow images={SiteImagesRepo.DonnyImages} />
     </section>

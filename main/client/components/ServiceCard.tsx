@@ -1,12 +1,11 @@
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
-import { Button } from "./ui/button";
 import { Card, CardHeader, CardContent, CardFooter } from "./ui/card";
 import Typography from "./ui/Typography";
-import Link from "next/link";
 import LeadForm from "./LeadForm";
 import { DialogTitle, DialogDescription } from "@radix-ui/react-dialog";
 import { DialogHeader } from "./ui/dialog";
+import { ShowMore } from "./ReadMoreText";
 
 export const Service = ["photoshoot", "1 hour lesson", "30 min lesson", "Pony Rides"] as const;
 export const enum ServiceEnum {
@@ -35,11 +34,12 @@ interface Props {
 }
 export default function ServiceCard({ service: ServiceProp, primary }: Props) {
   const { title, description, intails, bookWhat, link, service, dialog } = ServiceProp;
+
   return (
     <Card
       className={cn(
         // TODO: Fix height on LG
-        "grid w-full grid-cols-1 content-between items-center md:h-[24rem] md:w-[50%] lg:h-[28rem] xl:h-fit",
+        "grid w-full grid-cols-1 content-between items-center ",
         primary && "bg-primary text-primary-foreground"
       )}
     >
@@ -49,19 +49,38 @@ export default function ServiceCard({ service: ServiceProp, primary }: Props) {
         <Typography variant={"h2"} className="text-center">
           {title}
         </Typography>
-        <Typography variant={"p"} affects={"muted"} className="text-center">
+        <Typography
+          variant={"p"}
+          affects={"muted"}
+          className={cn("text-center text-[#4D4D4D]", primary && "text-primary-foreground")}
+        >
           {description}
         </Typography>
       </CardHeader>
       <CardContent className="flex flex-col items-start justify-start gap-2">
-        {intails.map((intail, index) => (
-          <div className="flex items-start justify-start gap-3" key={index}>
-            <Check width={26} height={26} className="w-6 h-6" />
-            <Typography variant={"p"} className="" affects={"removePMargin"}>
-              {intail}
-            </Typography>
-          </div>
-        ))}
+        {intails.map((intail, index) => {
+          if (primary && index > 4) return undefined;
+          return (
+            <div className="flex items-start justify-start gap-3" key={index}>
+              <Check size={26} />
+              <Typography variant={"p"} className="m-0 p-0" affects={"removePMargin"}>
+                {intail}
+              </Typography>
+            </div>
+          );
+        })}
+        {primary && (
+          <ShowMore>
+            {intails.slice(0, 4).map((intail, index) => (
+              <div className="flex items-start justify-start gap-3" key={index}>
+                <Check size={26} />
+                <Typography variant={"p"} className="m-0 p-0" affects={"removePMargin"}>
+                  {intail}
+                </Typography>
+              </div>
+            ))}
+          </ShowMore>
+        )}
       </CardContent>
       <CardFooter className="w-full">
         <LeadForm primary={primary} service={service} buttonText={bookWhat} whatsappLink={link}>

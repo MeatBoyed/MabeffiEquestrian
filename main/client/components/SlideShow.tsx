@@ -10,17 +10,19 @@ export default function SlideShow({
   images,
   sizing,
   elements,
+  className,
 }: {
   delay?: number;
   images?: string[];
   sizing?: string;
   elements?: React.ReactElement[];
+  className?: string; 
 }) {
   const items = useMemo(() => {
     return (
       images?.map((image, index) => (
-        <CarouselItem key={index}>
-          <div className="w-full h-full md:hidden">
+        <CarouselItem key={index} className="min-h-full">
+          <div className="w-full min-h-full md:hidden">
             <Image src={image} alt="Image" width={500} height={400} className="rounded-lg object-contain" />
           </div>
           <div className="hidden md:block">
@@ -48,13 +50,14 @@ export default function SlideShow({
           delay: delay || 4000,
         }),
       ]}
+      className={className}
     >
       <CarouselContent>{items}</CarouselContent>
       {!elements && <CarouselControls />}
       {elements && (
         <div className="flex justify-center w-full mt-5 items-center gap-4">
-          <CarouselPrevious variant={"secondary"} />
-          <CarouselNext variant={"secondary"} />
+          <CarouselPrevious variant={"outline"} />
+          <CarouselNext variant={"outline"} />
         </div>
       )}
     </Carousel>

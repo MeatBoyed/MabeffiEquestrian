@@ -41,7 +41,7 @@ export default function Event({ Event }: Props) {
 
         {/* <!-- Badges --> */}
         <div className="flex w-full flex-wrap items-center justify-start gap-3 ">
-          <Badge variant={"secondary"} className="flex items-center justify-center gap-2">
+          <Badge variant={"outline"} className="flex items-center justify-center gap-2 px-3 py-2">
             <Typography variant={"p"} affects={"small"}>
               {date}
             </Typography>
@@ -49,14 +49,14 @@ export default function Event({ Event }: Props) {
           </Badge>
 
           {maxMemebers && (
-            <Badge variant={"secondary"} className="flex items-center justify-center gap-2">
+            <Badge variant={"outline"} className="flex items-center justify-center gap-2 px-3 py-2">
               <Typography variant={"p"} affects={"small"}>
                 {maxMemebers}
               </Typography>
               <Users size={20} />
             </Badge>
           )}
-          <Badge variant={"secondary"} className="flex items-center justify-center gap-2">
+          <Badge variant={"outline"} className="flex items-center justify-center gap-2 px-3 py-2">
             <Typography variant={"p"} affects={"small"}>
               {location}
             </Typography>

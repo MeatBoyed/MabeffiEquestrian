@@ -205,8 +205,8 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 const CarouselControls = () => {
   return (
     <div className={cn("absolute bottom-8 md:bottom-16 left-1/2 -translate-x-1/2 flex items-center justify-center gap-4")}>
-      <CarouselPrevious variant={"secondary"} />
-      <CarouselNext variant={"secondary"} />
+      <CarouselPrevious variant={"outline"} />
+      <CarouselNext variant={"outline"} />
     </div>
   );
 };

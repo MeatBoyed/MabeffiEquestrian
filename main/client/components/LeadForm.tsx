@@ -39,7 +39,7 @@ export default function LeadForm({
   whatsappLink,
   buttonText,
   children,
-}: { service: ServiceEnum; whatsappLink: string, primary?: boolean, buttonText: string } & PropsWithChildren) {
+}: { service: ServiceEnum; whatsappLink: string; primary?: boolean; buttonText: string } & PropsWithChildren) {
   const [open, setOpen] = useState(false);
   const form = useForm<z.infer<typeof LeadFormSchema>>({
     resolver: zodResolver(LeadFormSchema),
@@ -66,7 +66,7 @@ export default function LeadForm({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className={cn("w-full", primary && "bg-card text-card-foreground")}>
+        <Button variant={primary ? "outline" : "default"} className={cn("w-full")}>
           <Link href={whatsappLink}>Book A {buttonText}</Link>
         </Button>
       </DialogTrigger>
@@ -115,41 +115,41 @@ export default function LeadForm({
               )}
             />
             {!primary && (
-<>
-            <FormField
-              control={form.control}
-              name="date"
-              render={({ field }) => (
-                <FormItem className="flex flex-col">
-                  <FormLabel>Select a date</FormLabel>
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant={"outline"}
-                          className={cn("w-full pl-3 text-left font-normal", !field.value && "text-muted-foreground")}
-                        >
-                          {field.value ? format(field.value, "PPP") : <span>Pick a date</span>}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                        </Button>
-                      </FormControl>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar
-                        mode="single"
-                        selected={field.value}
-                        onSelect={field.onChange}
-                        disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
-                        initialFocus
-                      />
-                    </PopoverContent>
-                  </Popover>
-                  <FormDescription>Select a date for your lesson/photo shoot.</FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-</>
+              <>
+                <FormField
+                  control={form.control}
+                  name="date"
+                  render={({ field }) => (
+                    <FormItem className="flex flex-col">
+                      <FormLabel>Select a date</FormLabel>
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <FormControl>
+                            <Button
+                              variant={"outline"}
+                              className={cn("w-full pl-3 text-left font-normal", !field.value && "text-muted-foreground")}
+                            >
+                              {field.value ? format(field.value, "PPP") : <span>Pick a date</span>}
+                              <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                            </Button>
+                          </FormControl>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0" align="start">
+                          <Calendar
+                            mode="single"
+                            selected={field.value}
+                            onSelect={field.onChange}
+                            disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
+                            initialFocus
+                          />
+                        </PopoverContent>
+                      </Popover>
+                      <FormDescription>Select a date for your lesson/photo shoot.</FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </>
             )}
             <div className="flex flex-col space-y-2 mt-5">
               <WhatsAppButton link={whatsappLink} text="Join on WhatsApp" />

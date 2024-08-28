@@ -1,12 +1,9 @@
 import ServiceCard from "@/components/ServiceCard";
-import { Button } from "@/components/ui/button";
 import Typography from "@/components/ui/Typography";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { servicesOffer } from "@/lib/ClientData";
 import en from "@/lib/en";
 import { siteConfig } from "@/lib/siteConfig";
-import Link from "next/link";
-import { FaWhatsapp } from "react-icons/fa";
 
 export default function Services() {
   return (
@@ -26,11 +23,12 @@ export default function Services() {
       </div>
 
       {/* <!-- Services --> */}
-      <div className="flex w-full flex-col items-center justify-center gap-10 lg:flex-row lg:items-start">
-        <div className="flex w-full flex-col items-center justify-center gap-10 md:flex-row md:items-start">
-          <ServiceCard service={servicesOffer[0]} />
-          <ServiceCard service={servicesOffer[1]} primary />
-        </div>
+      <div className="grid grid-cols-1 items-center justify-center gap-10 md:items-start xl:grid-cols-3 ">
+        {/* <div className="flex w-full flex-col items-center justify-center gap-10 lg:flex-row lg:items-start"> */}
+        {/* <div className="flex w-full flex-col items-center justify-center gap-10 md:flex-row md:items-start"> */}
+        <ServiceCard service={servicesOffer[0]} />
+        <ServiceCard service={servicesOffer[1]} primary />
+        {/* </div> */}
 
         <ServiceCard service={servicesOffer[2]} />
       </div>

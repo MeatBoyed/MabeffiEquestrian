@@ -16,8 +16,8 @@ export default function Home() {
         <Services />
         <HorseProfile />
         <Events />
-        <Testimonials />
       </section>
+      <div className="max-w- flex justify-center items-center my-32 ">{/* <Testimonials /> */}</div>
     </main>
   );
 }

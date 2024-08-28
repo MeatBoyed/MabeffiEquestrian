@@ -26,3 +26,20 @@ export default function WhoAmIBodyText({ part1, part2, part3 }: { part1: string;
     </Collapsible>
   );
 }
+
+export function ShowMore({ children }: { children: React.ReactNode }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <Collapsible onOpenChange={(open) => setIsOpen(open)}>
+      <CollapsibleContent className="flex flex-col items-start justify-center gap-2">
+      {children}
+      </CollapsibleContent>
+      <CollapsibleTrigger style={{ marginTop: !isOpen ? "" : "0.75rem" }}>
+        <Typography variant={"p"} affects={"small"}>
+          {!isOpen ? "Read More" : "Show Less"}
+        </Typography>
+      </CollapsibleTrigger>
+    </Collapsible>
+  );
+}

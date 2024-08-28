@@ -23,12 +23,12 @@ const en = {
     title: "Mabeffi Equestrian",
     subtitle: "Experience the Joy, Confidence, and Connection That Comes with Riding",
     primaryButton: {
-      text: "Contact Us",
-      path: "/contact",
+      text: "Book a ride",
+      path: "/#Services",
     },
     secondaryButton: {
-      text: "Learn More",
-      path: "/about",
+      text: "Meet Donny",
+      path: "/#Horse",
     },
   },
   intro: {
@@ -63,7 +63,7 @@ const en = {
     title: "My Services",
     subtitle: "Unlock Lifelong Skills and Qualities with Horse Riding Lessons",
     button: "Get In Touch",
-    buttonText: "Unlock your child's riding potential.",
+    buttonText: "Unlock your riding potential.",
   },
   Donny: {
     title: "Don Natello",
@@ -74,7 +74,7 @@ const en = {
     },
     description: {
       part1:
-        "***Donny has a gentle demeanor and affectionate nature makes him especially fond of children and takes great pleasure in his role as a trusted companion. He is dedicated to providing a safe and nurturing introduction to the world of horses, making him the perfect partner for riders of all levels.",
+        "Donny has a gentle demeanor and affectionate nature makes him especially fond of children and takes great pleasure in his role as a trusted companion. He is dedicated to providing a safe and nurturing introduction to the world of horses, making him the perfect partner for riders of all levels.",
       part2:
         "Donny's success extends beyond his loving personality. He has showcased his talent and skill by successfully competing at the 1.10cm level in show jumping and demonstrating his prowess in elementary level dressage. These achievements are a testament to his abilities and his commitment to excellence.",
     },
