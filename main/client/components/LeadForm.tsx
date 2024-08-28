@@ -67,7 +67,7 @@ export default function LeadForm({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button variant={primary ? "outline" : "default"} className={cn("w-full")}>
-          <Link href={whatsappLink}>Book A {buttonText}</Link>
+          Book A {buttonText}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px]">
@@ -107,7 +107,12 @@ export default function LeadForm({
                 <FormItem className="flex flex-col items-start">
                   <FormLabel className="text-left">Phone Number</FormLabel>
                   <FormControl className="w-full">
-                    <PhoneInput placeholder="Enter a phone number" defaultCountry="NA" {...field} className="placeholder:text-black" />
+                    <PhoneInput
+                      placeholder="Enter a phone number"
+                      defaultCountry="NA"
+                      {...field}
+                      className="placeholder:text-black"
+                    />
                   </FormControl>
                   <FormDescription className="text-left text-black">Enter a phone number</FormDescription>
                   <FormMessage />
@@ -151,7 +156,7 @@ export default function LeadForm({
                 />
               </>
             )}
-            <div className="flex flex-col space-y-2 mt-5">
+            <div className="flex flex-col space-y-2 mt-10">
               <WhatsAppButton link={whatsappLink} text="Join on WhatsApp" />
               <Button type="submit" className="w-full">
                 Join now
